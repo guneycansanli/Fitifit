@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);
         }
+        else if(item.getItemId() == R.id.actions_settings){
+           Intent settingsIntent= new Intent(MainActivity.this,SettingsActivity.class);
+           startActivity(settingsIntent);
+        }
         return true;
     }
 

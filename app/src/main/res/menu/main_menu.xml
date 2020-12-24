@@ -7,4 +7,7 @@
         android:icon="@drawable/app_signout"
         android:title="Oturumu Kapat"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/actions_settings"
+        android:title="Ayarlar" />
 </menu>
