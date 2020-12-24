@@ -15,9 +15,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginStart="-22dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="22dp"
         app:srcCompat="@drawable/fitifit" />
 
     <EditText
@@ -32,7 +32,7 @@
         android:hint="Kullanıcı Adı"
         android:inputType="textPersonName"
         android:padding="5dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/register_email"
@@ -48,7 +48,7 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:padding="5dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/register_password"
@@ -64,7 +64,7 @@
         android:hint="Şifre"
         android:inputType="textPassword"
         android:padding="5dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/register_button"
