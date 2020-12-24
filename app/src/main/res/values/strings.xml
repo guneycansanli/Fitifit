@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">fitifit</string>
+
+    <string name="login_need">Yeni Bir Hesap</string>
+    <string name="btn_login">Giriş</string>
+    <string name="reg_text">Zaten Bir hesabım Var</string>
+
+</resources>

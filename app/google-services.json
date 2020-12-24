@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "443712603898",
+    "project_id": "fitifitapp",
+    "storage_bucket": "fitifitapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443712603898:android:1b12891d6f78ee78002b43",
+        "android_client_info": {
+          "package_name": "com.example.fitifit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443712603898-teakc2kpbo0a3vtufj4k3bjb5uv3odbq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvstghn0VPhEYNGKdpfUgaD7hG8RiEAYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443712603898-teakc2kpbo0a3vtufj4k3bjb5uv3odbq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
