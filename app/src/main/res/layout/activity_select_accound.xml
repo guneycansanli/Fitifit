@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectAccound">
+
+    <ImageView
+        android:id="@+id/imageSelectRegister"
+        android:layout_width="388dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fitifit" />
+
+    <TextView
+        android:id="@+id/textSelectRegister"
+        android:layout_width="198dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="84dp"
+        android:text="Nasıl Kayıt Olmak İstersiniz?"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSelectRegister"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/selectDietician"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="48dp"
+        android:text="Diyetisyen"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSelectRegister" />
+
+    <Button
+        android:id="@+id/selectUser"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:text="Kullanıcı"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectDietician"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
