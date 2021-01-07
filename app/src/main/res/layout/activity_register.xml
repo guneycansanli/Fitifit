@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/fitifit" />
 
     <EditText
-        android:id="@+id/register_name"
+        android:id="@+id/register_dietician_name"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
@@ -35,7 +35,7 @@
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/register_email"
+        android:id="@+id/register_dietician_email"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
@@ -51,7 +51,7 @@
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/register_password"
+        android:id="@+id/register_dietician_password"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
@@ -67,7 +67,7 @@
         android:textColor="@color/black" />
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/register_dietician_button"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
