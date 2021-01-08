@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".DieticianRegisterActivity"></activity>
+        <activity android:name=".AdminMainActivity"></activity>
+        <activity android:name=".fitifitAdmin" />
+        <activity android:name=".DieticianRegisterActivity" />
         <activity android:name=".SelectAccound" />
         <activity
             android:name=".SettingsActivity"
