@@ -76,4 +76,14 @@
         android:text="@string/btn_login"
         android:textAllCaps="false" />
 
+    <TextView
+        android:id="@+id/admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="19dp"
+        android:text="Admin" />
+
 </RelativeLayout>

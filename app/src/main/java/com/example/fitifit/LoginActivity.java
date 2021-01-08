@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginEmail;
     private EditText loginPassword;
     private Button loginButton;
-    private TextView loginToRegister;
+    private TextView loginToRegister,admin;
     private ProgressDialog loginProgress;
     private FirebaseAuth mAuth;
 
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        admin = (TextView) findViewById(R.id.admin);
         loginPassword = (EditText) findViewById(R.id.login_password);
         loginEmail = (EditText) findViewById(R.id.login_email);
         loginButton = (Button) findViewById(R.id.login_button);
@@ -44,6 +45,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent selectRegisterIntent = new Intent(LoginActivity.this, SelectAccound.class);
                 startActivity(selectRegisterIntent);
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent adminIntent = new Intent(LoginActivity.this, fitifitAdmin.class);
+                startActivity(adminIntent);
             }
         });
 
@@ -86,4 +94,5 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
 }

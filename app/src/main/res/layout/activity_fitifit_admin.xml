@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".fitifitAdmin">
 
+    <!-- Login Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loginLayoutAdmin">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="500dp"
@@ -69,7 +75,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="12dp"
                 android:visibility="invisible"
-                android:id="@id/loginBtnAdmin"/>
+                android:id="@id/progressBar"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,4 +90,88 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <!-- Forgot Password Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/forgotloginLayoutAdmin">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="12dp"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Forgot Password"
+                    android:textSize="26sp"
+                    android:textColor="#8C9EFF"
+                    android:id="@+id/forgottxtAdmin"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/forgottxtAdmin"
+                    android:layout_above="@+id/forgotprogressBar">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/forgotemailAdmin"
+                        android:hint="E-mail"
+                        android:padding="8dp"
+                        android:background="@drawable/text_box"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Go Back,Login"
+                        android:textColor="#3F51B5"
+                        android:layout_gravity="end"
+                        android:padding="8dp"
+                        android:id="@+id/backTv"/>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="12dp"
+                    android:layout_above="@+id/forgotloginBtnAdmin"
+                    android:visibility="invisible"
+                    android:id="@id/forgotprogressBar"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/forgotloginBtnAdmin"
+                    android:text="Forgot"
+                    android:textColor="#fff"
+                    android:minWidth="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/btn_background_admin"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
 </RelativeLayout>
