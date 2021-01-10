@@ -12,17 +12,18 @@
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="Kullanıcı Adı"
         android:inputType="textPersonName"
         android:padding="5dp"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/register_dietician_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="320dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/register_dietician_email"
@@ -51,6 +52,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="Şifre"
@@ -60,8 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintTop_toBottomOf="@+id/register_dietician_email"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/register_dietician_button"
@@ -69,13 +71,14 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp"
         android:background="@drawable/buton_background"
         android:text="Kayıt Ol"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="559dp"
+        app:layout_constraintTop_toBottomOf="@+id/register_dietician_password"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -84,10 +87,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
         android:text="@string/reg_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="689dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
