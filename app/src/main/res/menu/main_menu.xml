@@ -2,12 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_signout"
-        android:icon="@drawable/app_signout"
-        android:title="Oturumu Kapat"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/actions_settings"
-        android:title="Ayarlar" />
+
+    <group>
+
+        <item
+            android:id="@+id/action_signout"
+            android:icon="@drawable/app_signout"
+            android:title="Oturumu Kapat"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/actions_settings"
+            android:title="Ayarlar" />
+    </group>
+
+    <item android:title="Communicate">
+
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_rate"
+                android:title="Rate Us"/>
+        </menu>
+
+
+    </item>
+
 </menu>
