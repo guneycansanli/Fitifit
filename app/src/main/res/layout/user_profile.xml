@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/profilePhoto"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/profilePhoto"
+        android:layout_marginStart="5dp"
+        android:layout_centerVertical="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kullanici Adi"
+            android:id="@+id/txt_user_name"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary_dark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kullanici Adi"
+            android:maxLines="1"
+            android:id="@+id/txt_Uname"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_follow"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:text="Takip Et"
+        android:background="@color/design_default_color_primary_dark"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+
+</RelativeLayout>

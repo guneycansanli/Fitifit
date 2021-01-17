@@ -1,5 +1,6 @@
 package com.example.fitifit.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.fitifit.EditActivity;
 import com.example.fitifit.Model.ProfileModel;
 import com.example.fitifit.R;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -21,6 +23,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileHolder> {
 
     private List<ProfileModel> list;
+    private Context mContext;
+    private FirebaseUser firebaseUser;
 
     public ProfileAdapter(List<ProfileModel> list) {
         this.list = list;

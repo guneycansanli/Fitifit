@@ -84,7 +84,9 @@ public class LoginActivity extends AppCompatActivity {
                     loginProgress.dismiss();
                     Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_SHORT).show();
                     Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);      // geri döndürme engellendi
                     startActivity(mainIntent);
+                    finish();                //
 
                 } else {
                     loginProgress.dismiss();

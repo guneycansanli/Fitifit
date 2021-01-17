@@ -121,7 +121,6 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
