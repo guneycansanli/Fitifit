@@ -35,8 +35,6 @@ public class DieticianRegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietician_register);
-
-
         init();
         clickListener();
         goBackToLogin();

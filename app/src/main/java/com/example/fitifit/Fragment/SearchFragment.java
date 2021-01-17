@@ -88,7 +88,7 @@ public class SearchFragment extends Fragment {
 
     private void UserSearch(String s)
     {
-        Query sorgu = FirebaseDatabase.getInstance().getReference("Users").orderByChild("name")
+        Query sorgu = FirebaseDatabase.getInstance().getReference("Dieticians").orderByChild("name")
                 .startAt(s)
                 .endAt(s+"\uf8ff");
         sorgu.addValueEventListener(new ValueEventListener() {
@@ -111,7 +111,7 @@ public class SearchFragment extends Fragment {
     }
     private void ReadUsers()
     {
-        DatabaseReference usersPath = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference usersPath = FirebaseDatabase.getInstance().getReference("Dieticians");
 
         usersPath.addValueEventListener(new ValueEventListener() {
             @Override
