@@ -15,9 +15,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="-22dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/fitifit" />
 
     <EditText
@@ -27,29 +27,29 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="286dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="66dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
-        android:padding="5dp"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
+        android:padding="5dp"
         android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/login_password"
         android:layout_width="250dp"
         android:layout_height="35dp"
+        android:layout_below="@+id/login_email"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:padding="5dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="352dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="Şifre"
         android:inputType="textPassword"
+        android:padding="5dp"
         android:textColor="@color/black" />
 
     <TextView
@@ -60,18 +60,18 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="147dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginBottom="86dp"
         android:text="@string/login_need" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="250dp"
         android:layout_height="40dp"
+        android:layout_below="@+id/login_password"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="247dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="65dp"
         android:background="@drawable/buton_background"
         android:text="@string/btn_login"
         android:textAllCaps="false" />
