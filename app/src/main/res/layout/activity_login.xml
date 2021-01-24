@@ -9,11 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="230dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
@@ -24,11 +22,9 @@
         android:id="@+id/login_email"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="331dp"
-        android:layout_marginEnd="66dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="50dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="E-mail"
@@ -41,10 +37,8 @@
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_below="@+id/login_email"
-        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="Şifre"
@@ -52,29 +46,25 @@
         android:padding="5dp"
         android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/login_need_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="147dp"
-        android:layout_marginBottom="86dp"
-        android:text="@string/login_need" />
-
     <Button
         android:id="@+id/login_button"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_below="@+id/login_password"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/buton_background"
         android:text="@string/btn_login"
         android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/login_need_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_button"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_need" />
 
     <TextView
         android:id="@+id/admin"
