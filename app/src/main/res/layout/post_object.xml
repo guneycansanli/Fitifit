@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo_post_object"
+                android:layout_marginRight="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/txt_username_post_object"
+                android:text="Kullanıcı Adı"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_image_post_object"
+            android:src="@mipmap/ic_launcher"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/like_post"
+                android:src="@drawable/ic_like"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/comment_post_object"
+                android:layout_toEndOf="@+id/like_post"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_comment"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_save"
+                android:id="@+id/save_post_object"
+                android:layout_alignParentEnd="true"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_likes_post_object"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:text="!0 Begeni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txt_send_post_object"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:text="Guneycan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txt_about_post_object"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:text="Gonderi Hakkinda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txt_comment_post_object"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary"
+            android:text="20 yorum hepsini gor"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
