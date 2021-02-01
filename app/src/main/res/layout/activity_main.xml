@@ -11,9 +11,9 @@
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/toolBar"
+        android:background="?android:attr/windowBackground"
         android:foreground="@drawable/fitifit"
-        android:foregroundGravity="center_vertical|clip_horizontal|center|center_horizontal">
+        android:foregroundGravity="center_vertical|center_horizontal">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:text="MainActiviy"
+        android:text="MainActiviy DEmeme"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
