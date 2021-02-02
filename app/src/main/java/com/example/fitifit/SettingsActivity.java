@@ -116,6 +116,7 @@ public class SettingsActivity extends AppCompatActivity {
                             StorageReference userImage=storageReference.child("profile_images").child(user_id+".jpg");
 
                         }
+
                     }
             }
         });

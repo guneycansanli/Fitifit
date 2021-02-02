@@ -16,19 +16,25 @@
         android:foregroundGravity="center_vertical|center_horizontal">
 
     </androidx.appcompat.widget.Toolbar>
+    <Button
+        android:id="@+id/chatWithDietician"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:text="Diyetisyenim İle Görüş"
+        android:background="@drawable/buton_background"
+        android:layout_below="@+id/mainToolbar"/>
+    <Button
+        android:id="@+id/denem"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:text="Diyetisyenimi Değiştir"
+        android:layout_below="@+id/mainToolbar"
+        android:background="@drawable/buton_background"
+        android:layout_toRightOf="@+id/chatWithDietician"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:text="MainActiviy DEmeme"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:layout_width="match_parent"
