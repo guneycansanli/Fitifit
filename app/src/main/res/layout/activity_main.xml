@@ -16,24 +16,6 @@
         android:foregroundGravity="center_vertical|center_horizontal">
 
     </androidx.appcompat.widget.Toolbar>
-    <Button
-        android:id="@+id/chatWithDietician"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="100dp"
-        android:text="Diyetisyenim İle Görüş"
-        android:background="@drawable/buton_background"
-        android:layout_below="@+id/mainToolbar"/>
-    <Button
-        android:id="@+id/denem"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:text="Diyetisyenimi Değiştir"
-        android:layout_below="@+id/mainToolbar"
-        android:background="@drawable/buton_background"
-        android:layout_toRightOf="@+id/chatWithDietician"/>
 
 
     <FrameLayout
