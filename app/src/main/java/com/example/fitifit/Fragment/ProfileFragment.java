@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.fitifit.ChatMainActivity;
 import com.example.fitifit.LoginActivity;
 import com.example.fitifit.MainActivity;
 import com.example.fitifit.MessageActivity;
@@ -78,7 +79,7 @@ public class ProfileFragment extends Fragment {
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), MessageActivity.class);
+                Intent i = new Intent(getActivity(), ChatMainActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 

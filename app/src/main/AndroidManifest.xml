@@ -25,7 +25,8 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".ChatMainActivity"></activity>
+        <activity android:name=".MessageActivity" />
         <activity android:name=".PostActivity" />
         <activity android:name=".EditActivity" />
         <activity
