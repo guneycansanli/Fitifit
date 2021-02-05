@@ -4,7 +4,7 @@
     <string name="login_need">Yeni Bir Hesap</string>
     <string name="btn_login">Giriş</string>
     <string name="reg_text">Zaten Bir hesabım Var</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
