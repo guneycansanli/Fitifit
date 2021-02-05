@@ -16,7 +16,7 @@ import android.widget.EditText;
 
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
-import com.example.fitifit.adapter.UserAdapter;
+import com.example.fitifit.Adapter.UserAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
-import com.example.fitifit.adapter.UserChatAdapter;
+import com.example.fitifit.Adapter.UserChatAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

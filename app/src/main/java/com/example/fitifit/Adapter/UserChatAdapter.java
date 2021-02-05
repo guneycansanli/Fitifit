@@ -1,6 +1,7 @@
-package com.example.fitifit.adapter;
+package com.example.fitifit.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.fitifit.MessageActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.List;
 
@@ -45,6 +46,14 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
        }else{
            Glide.with(mContext).load(user.getImage()).into(holder.profile_image);
        }
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(mContext, MessageActivity.class);
+               intent.putExtra("userid",user.getUid());
+               mContext.startActivity(intent);
+           }
+       });
 
     }
 

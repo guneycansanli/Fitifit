@@ -1,4 +1,4 @@
-package com.example.fitifit.adapter;
+package com.example.fitifit.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

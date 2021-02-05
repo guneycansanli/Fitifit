@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.fitifit.Fragment.ChatsFragment;
 import com.example.fitifit.Fragment.UsersFragment;
 import com.example.fitifit.Model.UserProfileModel;
-import com.example.fitifit.adapter.UserChatAdapter;
+import com.example.fitifit.Adapter.UserChatAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

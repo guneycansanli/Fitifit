@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.fitifit.Model.Post;
 import com.example.fitifit.R;
-import com.example.fitifit.adapter.PostAdapter;
+import com.example.fitifit.Adapter.PostAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
