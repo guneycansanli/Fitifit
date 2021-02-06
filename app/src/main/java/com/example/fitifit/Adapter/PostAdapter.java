@@ -29,7 +29,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     public Context mContext;
     public List<Post> mPost;
 
-    private FirebaseUser currentFirebaseUser;
+    public FirebaseUser currentFirebaseUser;
 
     public PostAdapter(Context mContext, List<Post> mPost) {
         this.mContext = mContext;
@@ -78,7 +78,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            profile_photo = itemView.findViewById(R.id.profile_photo_post_object);
+           profile_photo = itemView.findViewById(R.id.profile_photo_post_object);
             post_photo = itemView.findViewById(R.id.post_image_post_object);
             like_photo = itemView.findViewById(R.id.like_post);
             comment_photo = itemView.findViewById(R.id.comment_post_object);
@@ -95,7 +95,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
     private void posterInfo(ImageView profile_photo,TextView userName, TextView poster, String userId)
     {
-        DatabaseReference dataPath = FirebaseDatabase.getInstance().getReference("Users").child(userId);
+        DatabaseReference dataPath = FirebaseDatabase.getInstance().getReference("Dieticians").child(userId);
         dataPath.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

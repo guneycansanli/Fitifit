@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
                     Post post = dataSnapshot.getValue(Post.class);
                     for (String id : followList)
                     {
-                        if(post.getPostAbout().equals(id))
+                        if(post.getPostFrom().equals(id))
                         {
                             postLists.add(post);
                         }
