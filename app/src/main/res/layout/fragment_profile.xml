@@ -21,13 +21,13 @@
         android:background="@drawable/buton_background"
         android:layout_below="@+id/mainToolbar"/>
     <Button
-        android:id="@+id/denem"
+        android:id="@+id/deneme"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:text="Diyetisyenimi Değiştir"
+        android:text="Diyetisyenler ile görüş"
         android:layout_below="@+id/mainToolbar"
-        android:background="@drawable/buton_background"
+        android:background="#6032A1"
         android:layout_toRightOf="@+id/chatWithDietician"/>
 
 </RelativeLayout>
