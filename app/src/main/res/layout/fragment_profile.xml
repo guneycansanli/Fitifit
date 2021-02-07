@@ -18,16 +18,16 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
         android:text="Diyetisyenim İle Görüş"
-        android:background="@drawable/buton_background"
+        android:background="#7986CB"
         android:layout_below="@+id/mainToolbar"/>
     <Button
-        android:id="@+id/deneme"
+        android:id="@+id/chatWithUser"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:text="Diyetisyenler ile görüş"
+        android:text="Kullanıcı ile görüş"
         android:layout_below="@+id/mainToolbar"
-        android:background="#6032A1"
+        android:background="#D31C9F"
         android:layout_toRightOf="@+id/chatWithDietician"/>
 
 </RelativeLayout>

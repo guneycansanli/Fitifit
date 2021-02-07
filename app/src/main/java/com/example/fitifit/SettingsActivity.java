@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -29,11 +31,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -43,12 +47,14 @@ public class SettingsActivity extends AppCompatActivity {
     private Button settingsBtn;
     private EditText settingsName;
     private CircleImageView settingsImg;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth reference;
     private DatabaseReference mDatabase;
     private Boolean isCheck=false;
     private Uri imageUri=null;
     private ProgressDialog settingsProgress;
+    public static final int IMAGE_REQUEST = 1;
     private StorageReference storageReference;
+    private StorageTask uploadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +71,9 @@ public class SettingsActivity extends AppCompatActivity {
         settingsProgress = new ProgressDialog(this);
 
 
-        mAuth=FirebaseAuth.getInstance();
+        reference=FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        String user_id=mAuth.getCurrentUser().getUid();
+        String user_id=reference.getCurrentUser().getUid();
         mDatabase=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -94,7 +100,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ActivityCompat.requestPermissions(SettingsActivity.this,new String []{
                     Manifest.permission.READ_EXTERNAL_STORAGE},1);
-                CropImage.activity(null)
+                CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .start(SettingsActivity.this);
 
@@ -111,11 +117,40 @@ public class SettingsActivity extends AppCompatActivity {
                     settingsProgress.show();
                     if(!TextUtils.isEmpty(userName) && imageUri != null)
                     {
-                        if(isCheck)
-                        {
-                            StorageReference userImage=storageReference.child("profile_images").child(user_id+".jpg");
+                            final StorageReference fileReference = storageReference.child("profile_images").child(user_id+".jpg");
+                            uploadTask=fileReference.getFile(imageUri);
+                            uploadTask.continueWith(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                                @Override
+                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                    if(!task.isSuccessful()){
+                                        throw  task.getException();
+                                    }
+                                    return  fileReference.getDownloadUrl();
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    if (task.isSuccessful()){
+                                        Uri downloadUri = task.getResult();
+                                        String mUri =downloadUri.toString();
 
-                        }
+                                        mDatabase = FirebaseDatabase.getInstance().getReference("Users").child(user_id);
+                                        HashMap<String, Object> map = new HashMap<>();
+                                        map.put("image", mUri);
+                                        mDatabase.updateChildren(map);
+                                        settingsProgress.dismiss();
+                                    } else {
+                                        Toast.makeText(getBaseContext(), "Failed",Toast.LENGTH_SHORT).show();
+                                        settingsProgress.dismiss();
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    settingsProgress.dismiss();
+                                }
+                            });
 
                     }
             }

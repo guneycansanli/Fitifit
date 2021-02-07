@@ -58,6 +58,7 @@ public class ChatMainActivity extends AppCompatActivity {
         firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseuser.getUid());
 
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
