@@ -1,4 +1,4 @@
 # Fitifit Guneycan Sanli Thesis
 
-All project is in Main Branch
+All project is in Master Branch
 
