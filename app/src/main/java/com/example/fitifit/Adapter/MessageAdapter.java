@@ -22,10 +22,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     public static final int MSG_TYPE_LEFT = 0;
     public static final int MSG_TYPE_RIGHT = 1;
-    private Context mContext;
-    private List<Chat> mChat;
-    private String imageUrl;
-    private FirebaseUser fuser;
+     Context mContext;
+     List<Chat> mChat;
+     String imageUrl;
+     FirebaseUser fuser;
 
     public MessageAdapter(Context mContext, List<Chat> mChat, String imageurl) {
         this.mContext = mContext;

@@ -12,13 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.fitifit.Adapter.UserAdapter;
 import com.example.fitifit.ChatMainActivity;
-import com.example.fitifit.LoginActivity;
 import com.example.fitifit.MainActivity;
-import com.example.fitifit.MessageActivity;
 import com.example.fitifit.Model.UserProfileModel;
-import com.example.fitifit.PostActivity;
 import com.example.fitifit.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -100,6 +96,9 @@ public class ProfileFragment extends Fragment {
 
             }
         });
+
+
+
 
         return view;
     }

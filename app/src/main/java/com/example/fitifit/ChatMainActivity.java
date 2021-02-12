@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.fitifit.Adapter.UserAdapter;
 import com.example.fitifit.Fragment.ChatsFragment;
 import com.example.fitifit.Fragment.UsersFragment;
 import com.example.fitifit.Model.UserProfileModel;
@@ -28,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -37,7 +39,7 @@ public class ChatMainActivity extends AppCompatActivity {
     TextView username;
 
     FirebaseUser firebaseuser;
-    DatabaseReference reference;
+    DatabaseReference reference,referencePro;
     UserChatAdapter userChatAdapter;
     RecyclerView recyclerView;
 
@@ -58,7 +60,6 @@ public class ChatMainActivity extends AppCompatActivity {
         firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseuser.getUid());
 
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -77,19 +78,13 @@ public class ChatMainActivity extends AppCompatActivity {
             }
         });
 
-
         TabLayout tabLayout=findViewById(R.id.tab_layout);
         ViewPager viewPager= findViewById(R.id.view_pager);
-
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
         viewPagerAdapter.addFragment(new ChatsFragment(),"Sohbetler");
         viewPagerAdapter.addFragment(new UsersFragment(),"Kullanıcılar");
-
         viewPager.setAdapter(viewPagerAdapter);
-
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter{

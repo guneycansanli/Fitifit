@@ -76,7 +76,7 @@ public class MessageActivity extends AppCompatActivity {
         String userid = intent.getStringExtra("userid");
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Dieticians").child(userid);
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,9 +135,10 @@ public class MessageActivity extends AppCompatActivity {
                             chat.getReceiver().equals(userid) && chat.getSender().equals(myid)) {
                         mchat.add(chat);
                     }
-                    messageAdapter = new MessageAdapter(MessageActivity.this, mchat, imageurl);
-                    recyclerView.setAdapter(messageAdapter);
+
                 }
+                messageAdapter = new MessageAdapter(MessageActivity.this, mchat, imageurl);
+                recyclerView.setAdapter(messageAdapter);
             }
 
             @Override

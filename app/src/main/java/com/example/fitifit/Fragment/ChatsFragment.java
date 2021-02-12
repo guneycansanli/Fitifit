@@ -32,13 +32,11 @@ import java.util.List;
 public class ChatsFragment extends Fragment {
 
     private RecyclerView recyclerView;
-
     private UserChatAdapter userAdapter;
     private List<UserProfileModel> mUsers;
 
     FirebaseUser fuser;
     DatabaseReference reference;
-
     private List<String> usersList;
 
 
@@ -75,10 +73,8 @@ public class ChatsFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
 
         return view;
 
@@ -87,7 +83,7 @@ public class ChatsFragment extends Fragment {
     private void readChats(){
         mUsers = new ArrayList<>();
 
-        reference = FirebaseDatabase.getInstance().getReference("Dieticians");
+        reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

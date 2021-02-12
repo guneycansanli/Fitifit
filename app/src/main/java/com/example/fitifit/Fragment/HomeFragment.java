@@ -47,9 +47,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_home, container, false);
-       recyclerView=view.findViewById(R.id.recyler_view_HomeFragment);
-       recyclerView.setHasFixedSize(true);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = view.findViewById(R.id.recyler_view_HomeFragment);
+        recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
@@ -57,15 +57,15 @@ public class HomeFragment extends Fragment {
 
         postLists = new ArrayList<>();
 
-        postAdapter = new PostAdapter(getContext(),postLists);
+        postAdapter = new PostAdapter(getContext(), postLists);
         recyclerView.setAdapter(postAdapter);
         followControl();
-        return  view;
+        return view;
     }
-    private void followControl()
-    {
+
+    private void followControl() {
         followList = new ArrayList<>();
-        DatabaseReference followPath =FirebaseDatabase.getInstance().getReference("Follow")
+        DatabaseReference followPath = FirebaseDatabase.getInstance().getReference("Follow")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child("Following");
 
@@ -73,8 +73,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 followList.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren())
-                {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     followList.add(dataSnapshot.getKey());
                 }
                 postsRead();
@@ -87,21 +86,18 @@ public class HomeFragment extends Fragment {
         });
 
     }
-    private void postsRead()
-    {
+
+    private void postsRead() {
         DatabaseReference postPath = FirebaseDatabase.getInstance().getReference("Posts");
 
         postPath.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 postLists.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren())
-                {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Post post = dataSnapshot.getValue(Post.class);
-                    for (String id : followList)
-                    {
-                        if(post.getPostFrom().equals(id))
-                        {
+                    for (String id : followList) {
+                        if (post.getPostFrom().equals(id)) {
                             postLists.add(post);
                         }
                     }
