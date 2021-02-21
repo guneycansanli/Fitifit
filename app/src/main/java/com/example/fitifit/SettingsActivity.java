@@ -1,6 +1,7 @@
 package com.example.fitifit;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -8,11 +9,13 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,9 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView settingsImg;
     private FirebaseAuth reference;
     private DatabaseReference mDatabase;
-    private Boolean isCheck=false;
-    private Uri imageUri=null;
-    private ProgressDialog settingsProgress;
+    private Uri imageUri;
     public static final int IMAGE_REQUEST = 1;
     private StorageReference storageReference;
     private StorageTask uploadTask;
@@ -68,11 +69,9 @@ public class SettingsActivity extends AppCompatActivity {
         settingsBtn=(Button) findViewById(R.id.settings_btn);
         settingsName=(EditText) findViewById(R.id.settings_name);
         settingsImg=(CircleImageView) findViewById(R.id.settings_image);
-        settingsProgress = new ProgressDialog(this);
-
 
         reference=FirebaseAuth.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
+        storageReference = FirebaseStorage.getInstance().getReference("profile_images");
         String user_id=reference.getCurrentUser().getUid();
         mDatabase=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -80,13 +79,13 @@ public class SettingsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
            String  user_name=snapshot.child("name").getValue().toString();
            String user_image=snapshot.child("image").getValue().toString();
-           imageUri=Uri.parse(user_image);
 
-                RequestOptions requestOptions = new RequestOptions();
-                requestOptions.placeholder(R.drawable.app_account_image);
-                Glide.with(SettingsActivity.this).setDefaultRequestOptions(requestOptions).load(imageUri).into(settingsImg);
-
-           settingsName.setText(user_name);
+           if(user_image.equals("default")){
+               settingsImg.setImageResource(R.mipmap.ic_launcher);
+           }else {
+               Glide.with(getBaseContext()).load(user_image).into(settingsImg);
+           }
+             settingsName.setText(user_name);
             }
 
             @Override
@@ -98,82 +97,86 @@ public class SettingsActivity extends AppCompatActivity {
         settingsImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityCompat.requestPermissions(SettingsActivity.this,new String []{
-                    Manifest.permission.READ_EXTERNAL_STORAGE},1);
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(SettingsActivity.this);
+                openImage ();
 
             }
         });
-
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String userName=settingsName.getText().toString();
-
-                    settingsProgress.setTitle("Güncelleniyor");
-                    settingsProgress.setMessage("Bilgilerinizi Güncelliyoruz Lütfen Bekleyin");
-                    settingsProgress.show();
-                    if(!TextUtils.isEmpty(userName) && imageUri != null)
-                    {
-                            final StorageReference fileReference = storageReference.child("profile_images").child(user_id+".jpg");
-                            uploadTask=fileReference.getFile(imageUri);
-                            uploadTask.continueWith(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                                @Override
-                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                                    if(!task.isSuccessful()){
-                                        throw  task.getException();
-                                    }
-                                    return  fileReference.getDownloadUrl();
-                                }
-                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task) {
-                                    if (task.isSuccessful()){
-                                        Uri downloadUri = task.getResult();
-                                        String mUri =downloadUri.toString();
-
-                                        mDatabase = FirebaseDatabase.getInstance().getReference("Users").child(user_id);
-                                        HashMap<String, Object> map = new HashMap<>();
-                                        map.put("image", mUri);
-                                        mDatabase.updateChildren(map);
-                                        settingsProgress.dismiss();
-                                    } else {
-                                        Toast.makeText(getBaseContext(), "Failed",Toast.LENGTH_SHORT).show();
-                                        settingsProgress.dismiss();
-                                    }
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                                    settingsProgress.dismiss();
-                                }
-                            });
-
-                    }
-            }
-        });
-
 
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE ) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                imageUri = result.getUri();
-                settingsImg.setImageURI(imageUri);
-                isCheck=true;
-                Toast.makeText(
-                        this, "Cropping successful, Sample: " + result.getSampleSize(), Toast.LENGTH_LONG).show();
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Toast.makeText(this, "Cropping failed: " + result.getError(), Toast.LENGTH_LONG).show();
-            }
+    private void openImage(){
+        Intent intent= new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, IMAGE_REQUEST);
+    }
+
+    private String getFileExtension(Uri uri){
+        ContentResolver contentResolver = getBaseContext().getContentResolver();
+        MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
+        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
+    }
+
+    private void uploadImage(){
+
+
+        if (imageUri !=null){
+            final StorageReference fileReference = storageReference.child(System.currentTimeMillis()
+                    +"."+getFileExtension(imageUri));
+
+            uploadTask = fileReference.putFile(imageUri);
+            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if(!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+
+                    return fileReference.getDownloadUrl();
+                }
+
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if(task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        String mUri=downloadUri.toString();
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("image", mUri);
+                        mDatabase.updateChildren(map);
+
+
+                    }else {
+                        Toast.makeText(getBaseContext(),"Hata" , Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getBaseContext(), e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }else {
+            Toast.makeText(getBaseContext(),"Fotograf Secilmedi",Toast.LENGTH_SHORT).show();
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(requestCode == IMAGE_REQUEST && resultCode == RESULT_OK
+        && data != null && data.getData() != null) {
+            imageUri = data.getData();
+
+            if(uploadTask != null && uploadTask.isInProgress()) {
+                Toast.makeText(getBaseContext(), "Yukleme islemde", Toast.LENGTH_SHORT).show();
+
+            }else {
+                uploadImage();
+            }
+        }
+    }
 }
