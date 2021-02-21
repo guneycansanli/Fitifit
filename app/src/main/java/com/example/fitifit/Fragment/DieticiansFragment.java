@@ -11,9 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.fitifit.Adapter.DieticianChatAdapter;
+import com.example.fitifit.Adapter.UserChatAdapter;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
-import com.example.fitifit.Adapter.UserChatAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,16 +26,18 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersFragment extends Fragment {
+
+public class DieticiansFragment extends Fragment {
+
     private RecyclerView recyclerView;
-    private UserChatAdapter userAdapter;
+    private DieticianChatAdapter userAdapter;
     private List<UserProfileModel> mUsers;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_users, container, false);
+        View view = inflater.inflate(R.layout.fragment_dieticians, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -47,7 +50,7 @@ public class UsersFragment extends Fragment {
 
     private void readUsers() {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Dieticians");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,7 +66,7 @@ public class UsersFragment extends Fragment {
                     }
                 }
 
-                userAdapter = new UserChatAdapter(getContext(), mUsers);
+                userAdapter = new DieticianChatAdapter(getContext(), mUsers);
                 recyclerView.setAdapter(userAdapter);
             }
 

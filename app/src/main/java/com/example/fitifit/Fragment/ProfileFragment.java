@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.fitifit.ChatMainActivity;
+import com.example.fitifit.DieticianChatMainActivity;
 import com.example.fitifit.MainActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
@@ -91,6 +92,16 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), ChatMainActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+
+            }
+        });
+
+        btn_chat_for_dietician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), DieticianChatMainActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 

@@ -14,11 +14,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.fitifit.Adapter.UserAdapter;
+import com.example.fitifit.Adapter.DieticianChatAdapter;
+import com.example.fitifit.Adapter.UserChatAdapter;
+import com.example.fitifit.Fragment.ChatsDieticianFragment;
 import com.example.fitifit.Fragment.ChatsFragment;
+import com.example.fitifit.Fragment.DieticiansFragment;
 import com.example.fitifit.Fragment.UsersFragment;
 import com.example.fitifit.Model.UserProfileModel;
-import com.example.fitifit.Adapter.UserChatAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,24 +31,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ChatMainActivity extends AppCompatActivity {
+public class DieticianChatMainActivity extends AppCompatActivity {
+
 
     CircleImageView profile_image;
     TextView username;
 
     FirebaseUser firebaseuser;
     DatabaseReference reference,referencePro;
-    UserChatAdapter userChatAdapter;
+    DieticianChatAdapter userChatAdapter;
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_main);
+        setContentView(R.layout.activity_dietician_chat_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,7 +60,7 @@ public class ChatMainActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
 
         firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseuser.getUid());
+        reference = FirebaseDatabase.getInstance().getReference("Dieticians").child(firebaseuser.getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -68,7 +70,7 @@ public class ChatMainActivity extends AppCompatActivity {
                 if(user.getImage().equals("default")){
                     profile_image.setImageResource(R.mipmap.ic_launcher);
                 } else{
-                    Glide.with(ChatMainActivity.this).load(user.getImage()).into(profile_image);
+                    Glide.with(DieticianChatMainActivity.this).load(user.getImage()).into(profile_image);
                 }
             }
 
@@ -81,13 +83,14 @@ public class ChatMainActivity extends AppCompatActivity {
         TabLayout tabLayout=findViewById(R.id.tab_layout);
         ViewPager viewPager= findViewById(R.id.view_pager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new ChatsFragment(),"Sohbetler");
-        viewPagerAdapter.addFragment(new UsersFragment(),"Diyetisyenler");
+        viewPagerAdapter.addFragment(new ChatsDieticianFragment(),"Sohbetler");
+        viewPagerAdapter.addFragment(new DieticiansFragment(),"Kullanıcılar");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter{
+    class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private ArrayList<Fragment> fragments;
         private ArrayList<String> titles;
@@ -119,5 +122,4 @@ public class ChatMainActivity extends AppCompatActivity {
             return titles.get(position);
         }
     }
-
 }

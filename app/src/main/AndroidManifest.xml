@@ -25,6 +25,8 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
+        <activity android:name=".MessageDieticianActivity"></activity>
+        <activity android:name=".DieticianChatMainActivity" />
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".PostActivity" />

@@ -11,14 +11,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.fitifit.Adapter.MessageAdapter;
+import com.example.fitifit.Adapter.MessageDieticianAdapter;
 import com.example.fitifit.Model.Chat;
 import com.example.fitifit.Model.UserProfileModel;
-import com.example.fitifit.Adapter.MessageAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,8 +33,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MessageActivity extends AppCompatActivity {
-
+public class MessageDieticianActivity extends AppCompatActivity {
     CircleImageView profile_image;
     TextView username;
     FirebaseUser fuser;
@@ -44,7 +43,7 @@ public class MessageActivity extends AppCompatActivity {
     EditText text_send;
 
     Intent intent;
-    MessageAdapter messageAdapter;
+    MessageDieticianAdapter messageAdapter;
     List<Chat> mchat;
 
     RecyclerView recyclerView;
@@ -76,7 +75,7 @@ public class MessageActivity extends AppCompatActivity {
         String userid = intent.getStringExtra("userid");
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Dieticians").child(userid);
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +84,7 @@ public class MessageActivity extends AppCompatActivity {
                 if (!msg.equals("")) {
                     sendMessage(fuser.getUid(), userid, msg);
                 } else {
-                    Toast.makeText(MessageActivity.this, "Mesaj gondermek icin bir seyler yazmanız gereklidir", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MessageDieticianActivity.this, "Mesaj gondermek icin bir seyler yazmanız gereklidir", Toast.LENGTH_SHORT).show();
                 }
                 text_send.setText("");
             }
@@ -99,7 +98,7 @@ public class MessageActivity extends AppCompatActivity {
                 if (user.getImage().equals("default")) {
                     profile_image.setImageResource(R.drawable.app_account_image);
                 } else {
-                    Glide.with(MessageActivity.this).load(user.getImage()).into(profile_image);
+                    Glide.with(MessageDieticianActivity.this).load(user.getImage()).into(profile_image);
                 }
 
                 readMessages(fuser.getUid(), userid, user.getImage());
@@ -137,7 +136,7 @@ public class MessageActivity extends AppCompatActivity {
                     }
 
                 }
-                messageAdapter = new MessageAdapter(MessageActivity.this, mchat, imageurl);
+                messageAdapter = new MessageDieticianAdapter(MessageDieticianActivity.this, mchat, imageurl);
                 recyclerView.setAdapter(messageAdapter);
             }
 
