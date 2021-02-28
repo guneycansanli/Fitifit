@@ -63,29 +63,6 @@ public class ProfileFragment extends Fragment {
         mUsers = new ArrayList<>();
 
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mUsers.clear();
-                    for(DataSnapshot snapshotl : snapshot.getChildren()){
-                        UserProfileModel user = snapshotl.getValue(UserProfileModel.class);
-                        mUsers.add(user);
-                    }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        for (UserProfileModel temp: mUsers){
-            if(currentUid == temp.getUid()){
-                btn_chat_for_dietician.setVisibility(View.GONE);
-            }
-        }
-
 
 
         btn_chat.setOnClickListener(new View.OnClickListener() {

@@ -38,15 +38,5 @@
         android:text="Name"
         android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/settings_btn"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/settings_name"
-        android:background="@drawable/buton_background"
-        android:text="Kaydet" />
 
 </RelativeLayout>

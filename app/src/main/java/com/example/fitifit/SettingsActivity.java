@@ -47,7 +47,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SettingsActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
-    private Button settingsBtn;
     private EditText settingsName;
     private CircleImageView settingsImg;
     private FirebaseAuth reference;
@@ -66,7 +65,6 @@ public class SettingsActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.mainToolbar);
         setSupportActionBar(mToolbar);
 
-        settingsBtn=(Button) findViewById(R.id.settings_btn);
         settingsName=(EditText) findViewById(R.id.settings_name);
         settingsImg=(CircleImageView) findViewById(R.id.settings_image);
 
