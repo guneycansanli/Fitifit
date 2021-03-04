@@ -33,6 +33,7 @@ import java.util.List;
 public class ProfileFragment extends Fragment {
 
     private Button btn_chat,btn_chat_for_dietician;
+    
     private String currentUid;
     private DatabaseReference myRef,reference;
     private List<UserProfileModel> mUsers;
@@ -105,8 +106,6 @@ public class ProfileFragment extends Fragment {
                     assert firebaseUser != null;
                     if (user.getUid().equals(firebaseUser.getUid())) {
                        btn_chat_for_dietician.setVisibility(View.GONE);
-                    } else{
-                        btn_chat.setVisibility(View.GONE);
                     }
                 }
             }

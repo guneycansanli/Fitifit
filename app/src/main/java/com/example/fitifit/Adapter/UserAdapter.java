@@ -56,7 +56,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         holder.userName.setText(userProfileModel.getName());
         holder.Uname.setText(userProfileModel.getName());
-        Glide.with(mContext).load(userProfileModel.getImage()).into(holder.profile_photo);
+        if(userProfileModel.getImage().equals("default")){
+            holder.profile_photo.setImageResource(R.mipmap.ic_launcher);
+        } else{
+            Glide.with(mContext).load(userProfileModel.getImage()).into(holder.profile_photo);
+        }
         Following(userProfileModel.getUid(),holder.btn_follow);
 
         if(userProfileModel.getUid().equals(firebaseUser.getUid()))
