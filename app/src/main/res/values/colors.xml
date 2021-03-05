@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolBar">#B388FF</color>
     <color name="colorPurple">#4A47A7</color>
+    <color name="endBlue">#0bcce6</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="startBlue">#09c6df</color>
+    <color name="grayLight">#fafafa</color>
+
 </resources>
