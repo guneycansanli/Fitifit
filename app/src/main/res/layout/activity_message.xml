@@ -17,7 +17,7 @@
             app:popupTheme="@style/Widget.AppCompat.PopupMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F3D77E">
+            android:background="#A5D6A7">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="30dp"
