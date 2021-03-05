@@ -94,6 +94,7 @@ public class ProfileFragment extends Fragment {
     private void check(){
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference referenceDietician = FirebaseDatabase.getInstance().getReference("Dieticians");   //This Function for which accound we sign in (Dietician Or User)
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -106,6 +107,27 @@ public class ProfileFragment extends Fragment {
                     assert firebaseUser != null;
                     if (user.getUid().equals(firebaseUser.getUid())) {
                        btn_chat_for_dietician.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        referenceDietician.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mUsers.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserProfileModel user = dataSnapshot.getValue(UserProfileModel.class);
+
+                    assert user != null;
+                    assert firebaseUser != null;
+                    if (user.getUid().equals(firebaseUser.getUid())) {
+                        btn_chat.setVisibility(View.GONE);
                     }
                 }
             }

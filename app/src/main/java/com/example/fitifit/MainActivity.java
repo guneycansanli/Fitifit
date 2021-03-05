@@ -16,11 +16,22 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.fitifit.Fragment.HomeFragment;
+import com.example.fitifit.Fragment.NotificaitonDieticianFragment;
 import com.example.fitifit.Fragment.NotificitionFragment;
 import com.example.fitifit.Fragment.ProfileFragment;
 import com.example.fitifit.Fragment.SearchFragment;
+import com.example.fitifit.Model.UserProfileModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     BottomNavigationView bottomNavigationView;
     Fragment selectedFragment = null;
+    private List<UserProfileModel> mUsers;
 
 
     @Override
@@ -59,13 +71,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mUsers = new ArrayList<>();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         mAuth = FirebaseAuth.getInstance();
         mToolbar = (Toolbar) findViewById(R.id.mainToolbar);
         setSupportActionBar(mToolbar);
+        check();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_Layout,new NotificitionFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_Layout,new ProfileFragment()).commit();
 
         if (mAuth.getCurrentUser() == null) {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
@@ -99,8 +113,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_favourite:
-                            selectedFragment = new NotificitionFragment();
-
+                            check();
                             break;
 
                         case R.id.nav_person:
@@ -120,5 +133,53 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    private void check(){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference referenceDietician = FirebaseDatabase.getInstance().getReference("Dieticians");   //This Function for which accound we sign in (Dietician Or User)
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mUsers.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserProfileModel user = dataSnapshot.getValue(UserProfileModel.class);
+
+                    assert user != null;
+                    assert firebaseUser != null;
+                    if (user.getUid().equals(firebaseUser.getUid())) {
+                        selectedFragment= new NotificitionFragment();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        referenceDietician.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mUsers.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserProfileModel user = dataSnapshot.getValue(UserProfileModel.class);
+
+                    assert user != null;
+                    assert firebaseUser != null;
+                    if (user.getUid().equals(firebaseUser.getUid())) {
+                      selectedFragment=new NotificaitonDieticianFragment();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 }

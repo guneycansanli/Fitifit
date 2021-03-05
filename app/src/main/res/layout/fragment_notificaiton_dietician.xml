@@ -85,7 +85,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Diyet Takip"
+                        android:text="Diyet Yaz"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -122,7 +122,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Su "
+                        android:text="Su"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -206,7 +206,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Egzersiz"
+                        android:text="Egzersiz Ver"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
