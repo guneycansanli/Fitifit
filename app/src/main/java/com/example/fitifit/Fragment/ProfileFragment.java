@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -32,7 +33,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-    private Button btn_chat,btn_chat_for_dietician;
+    private CardView btn_chat,btn_chat_for_dietician;
     
     private String currentUid;
     private DatabaseReference myRef,reference;
