@@ -25,7 +25,17 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".MessageDieticianActivity"></activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".MyUserToDo"></activity>
+        <activity
+            android:name=".NewTaskActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".UserToDo"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".SelectForTodo" />
+        <activity android:name=".MessageDieticianActivity" />
         <activity android:name=".DieticianChatMainActivity" />
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".MessageActivity" />

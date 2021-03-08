@@ -139,6 +139,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/give_todo"
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -156,10 +157,10 @@
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Discover"
+                        android:text="Günlük Görev ver"
                         android:textColor="#FFF"
                         android:textSize="18sp" />
 
@@ -196,14 +197,16 @@
                     <ImageView
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginBottom="18dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/ic_fitness_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textAlignment="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Egzersiz Ver"
