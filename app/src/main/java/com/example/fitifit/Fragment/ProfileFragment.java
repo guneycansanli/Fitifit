@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.fitifit.ChatMainActivity;
 import com.example.fitifit.DieticianChatMainActivity;
+import com.example.fitifit.FitStopWatchActivity;
 import com.example.fitifit.MainActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-    private CardView btn_chat,btn_chat_for_dietician;
+    private CardView btn_chat, btn_chat_for_dietician, btn_timing;
     
     private String currentUid;
     private DatabaseReference myRef,reference;
@@ -56,6 +57,7 @@ public class ProfileFragment extends Fragment {
         View view=  inflater.inflate(R.layout.fragment_profile, container, false);
 
 
+        btn_timing = view.findViewById(R.id.btn_timing);
         btn_chat =view.findViewById(R.id.chatWithDietician);
         btn_chat_for_dietician=view.findViewById(R.id.chatWithUser);
         currentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -83,6 +85,15 @@ public class ProfileFragment extends Fragment {
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 
+            }
+        });
+
+        btn_timing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), FitStopWatchActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
         });
 

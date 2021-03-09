@@ -26,8 +26,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
         <activity
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".MyUserToDo"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".StopWatchActivity"></activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".FitStopWatchActivity" />
+        <activity
+            android:name=".MyUserToDo"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".NewTaskActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
