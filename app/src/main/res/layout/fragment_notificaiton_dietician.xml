@@ -15,7 +15,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:text="Keşfet"
-        android:textColor="#FFF"
+        android:textColor="#FFFFFF"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -77,7 +77,7 @@
                         android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginBottom="18dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/ic_diet_menu_black" />
 
 
@@ -85,9 +85,10 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="Diyet Yaz"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -109,22 +110,23 @@
                     android:layout_height="120dp">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
 
                         android:layout_marginTop="12dp"
-                        android:layout_marginBottom="18dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/ic_water_icon" />
 
 
                     <TextView
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
+                        android:textStyle="bold"
                         android:layout_height="wrap_content"
                         android:text="Su"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -150,19 +152,20 @@
                     <ImageView
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginBottom="18dp"
-                        android:src="@drawable/checked"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/ic_todo_black"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"/>
 
 
                     <TextView
                         android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Günlük Görev ver"
-                        android:textColor="#FFF"
-                        android:textSize="18sp" />
+                        android:textStyle="bold"
+                        android:text="Günlük \nGörev ver"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -197,10 +200,10 @@
                     <ImageView
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/ic_fitness_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"/>
 
 
                     <TextView
@@ -211,7 +214,8 @@
                         android:layout_height="wrap_content"
                         android:text="Egzersiz Ver"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
