@@ -25,12 +25,13 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
+        <activity android:name=".MyUserToDoEdit"></activity>
         <activity
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name=".StopWatchActivity"></activity>
+            android:name=".StopWatchActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name=".FitStopWatchActivity" />
+            android:name=".FitStopWatchActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MyUserToDo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

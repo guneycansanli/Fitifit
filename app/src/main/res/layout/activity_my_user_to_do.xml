@@ -11,7 +11,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#230075"
+        android:background="#2B0B75"
         android:layout_height="198dp">
 
         <LinearLayout
@@ -36,7 +36,7 @@
                 <TextView
                     android:id="@+id/subtitlepage"
                     android:layout_marginTop="8dp"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textColor="#8389B1"
                     android:text="Bu gün hızlıca tamamla"
                     android:layout_width="match_parent"
@@ -50,6 +50,7 @@
                 android:textColor="#FFF"
                 android:id="@+id/btnAddNew"
                 android:textSize="38sp"
+                android:visibility="gone"
                 android:text="+"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="35dp"
@@ -83,7 +84,9 @@
         android:text="Daha Fazla Yapıcalak Aktivite Yok"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:id="@+id/endpage"
         android:layout_height="wrap_content"/>

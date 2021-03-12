@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyUserToDoEdit">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#230075"
+        android:layout_height="198dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titlepage"
+                android:layout_marginTop="20dp"
+                android:textSize="28sp"
+                android:layout_marginBottom="28dp"
+                android:textColor="#FFF"
+                android:text="Aktivitem"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <View
+                android:background="#131E69"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="-40dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_item_todo"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/addtitle"
+                android:text="Baslik"
+                android:textColor="#230075"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/titledoes"
+                android:inputType="text"
+                android:background="@drawable/bginputtask"
+                android:hint="Yapılacak Aktivite"
+                android:paddingLeft="12dp"
+                android:clickable="false"
+                android:textColorHint="#B5B5B5"
+                android:textColor="#230075"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/adddesc"
+                android:text="Aciklama"
+                android:textColor="#230075"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/descdoes"
+                android:inputType="text"
+                android:background="@drawable/bginputtask"
+                android:hint="Nasıl Yapılacak?"
+                android:paddingLeft="12dp"
+                android:maxLength="30"
+                android:textColorHint="#B5B5B5"
+                android:textColor="#230075"
+                android:layout_width="match_parent"
+                android:clickable="false"
+                android:layout_height="55dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/adddate"
+                android:text="Tarih"
+                android:textColor="#230075"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/datedoes"
+                android:inputType="text"
+                android:background="@drawable/bginputtask"
+                android:hint="Ne Zaman Yapilacak?"
+                android:paddingLeft="12dp"
+                android:textColorHint="#B5B5B5"
+                android:clickable="false"
+                android:textColor="#230075"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:background="@drawable/bgbtncreate"
+        android:id="@+id/btnSaveTask"
+        android:textColor="#FFF"
+        android:textAllCaps="false"
+        android:text="Olustur"
+        android:visibility="gone"
+        android:textSize="22sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"/>
+
+    <Button
+        android:background="@drawable/bgbtncancel"
+        android:id="@+id/btnDelete"
+        android:textColor="#AFAFAF"
+        android:textAllCaps="false"
+        android:text="Sil"
+        android:textSize="22sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="visible"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"/>
+
+
+</LinearLayout>

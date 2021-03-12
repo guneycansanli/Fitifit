@@ -26,7 +26,7 @@ public class NewTaskActivity extends AppCompatActivity {
     private Intent b;
     private Button btnSaveTask, btnCancel;
     private DatabaseReference reference;
-    private Integer todoNumber = new Random().nextInt();
+    private Integer task = new Random().nextInt();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +46,14 @@ public class NewTaskActivity extends AppCompatActivity {
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reference = FirebaseDatabase.getInstance().getReference().child("ToDo").child(userid).child("task" + todoNumber);
+                reference = FirebaseDatabase.getInstance().getReference().child("ToDo").child(userid).child(task.toString());
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         snapshot.getRef().child("titledoes").setValue(titledoes.getText().toString());
                         snapshot.getRef().child("descdoes").setValue(descdoes.getText().toString());
                         snapshot.getRef().child("datedoes").setValue(datedoes.getText().toString());
+                        snapshot.getRef().child("task").setValue(task.toString());
 
                         Intent a = new Intent(NewTaskActivity.this, MainActivity.class);
                         startActivity(a);

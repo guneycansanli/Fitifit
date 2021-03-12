@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.fitifit.MyUserToDo;
@@ -15,7 +16,7 @@ import com.example.fitifit.R;
 
 public class NotificitionFragment extends Fragment {
 
-    private TextView myToDo;
+    private LinearLayout myToDo;
 
 
     @Override

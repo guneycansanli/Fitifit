@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/descdoes"
-            android:textColor="#ADADAD"
+            android:textColor="#818181"
             android:layout_marginTop="8dp"
             android:text="yakın markete go"
             android:layout_width="wrap_content"
@@ -39,6 +39,7 @@
         <TextView
             android:id="@+id/datedoes"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:textColor="#F63EA5"
             android:layout_marginTop="8dp"
             android:text="yarin"

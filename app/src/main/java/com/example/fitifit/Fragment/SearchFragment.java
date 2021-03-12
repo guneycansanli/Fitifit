@@ -33,6 +33,7 @@ public class SearchFragment extends Fragment {
     private RecyclerView recyclerView;
     private UserAdapter userAdapter;
     private List<UserProfileModel> mUsers;
+    private Integer todoNumber;
     EditText search_bar;
 
     public SearchFragment() {

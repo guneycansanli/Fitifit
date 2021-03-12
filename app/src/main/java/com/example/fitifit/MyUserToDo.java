@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class MyUserToDo extends AppCompatActivity {
         ourdoes.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<ToDo>();
         btnAddNew = findViewById(R.id.btnAddNew);
+        btnAddNew.setVisibility(View.GONE);  //Users can t give To-Do theirselves
 
         firebaseUser = FirebaseAuth.getInstance();
         String myUid = firebaseUser.getCurrentUser().getUid();
@@ -67,4 +69,6 @@ public class MyUserToDo extends AppCompatActivity {
 
 
     }
+
+
 }
