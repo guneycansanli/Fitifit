@@ -67,11 +67,11 @@ public class MyUserToDoEdit extends AppCompatActivity {
                 reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Intent a = new Intent(MyUserToDoEdit.this, MyUserToDo.class);
                             startActivity(a);
                         } else {
-                            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -81,7 +81,7 @@ public class MyUserToDoEdit extends AppCompatActivity {
 
     }
 
-    private void check(){
+    private void check() {
         FirebaseUser firebaseU = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference referenceDietician = FirebaseDatabase.getInstance().getReference("Dieticians");   //This Function for which accound we sign in (Dietician Or User)
 

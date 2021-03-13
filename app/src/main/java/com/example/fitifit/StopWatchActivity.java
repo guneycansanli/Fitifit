@@ -42,10 +42,27 @@ public class StopWatchActivity extends AppCompatActivity {
                 icanchor.startAnimation(roundingalone);
                 btnstop.animate().alpha(1).translationY(-80).setDuration(300).start();
                 btnstart.animate().alpha(0).setDuration(300).start();
+                btnstart.setVisibility(View.GONE);
+                btnstop.setVisibility(View.VISIBLE);
 
                 //start time
                 timeHere.setBase(SystemClock.elapsedRealtime());
                 timeHere.start();
+            }
+        });
+
+        btnstop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icanchor.clearAnimation();
+                btnstart.animate().alpha(1).translationY(-80).setDuration(300).start();
+                btnstop.animate().alpha(0).setDuration(300).start();
+
+                btnstop.setVisibility(View.GONE);
+                btnstart.setVisibility(View.VISIBLE);
+
+                timeHere.stop();
+                timeHere.setBase(SystemClock.elapsedRealtime());
             }
         });
     }

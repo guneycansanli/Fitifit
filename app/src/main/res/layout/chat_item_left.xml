@@ -8,8 +8,8 @@
     <RelativeLayout
         android:id="@+id/deneme"
         android:layout_width="300dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/buton_background"
             android:text="hello"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentEnd="false"
             android:id="@+id/show_message"
             android:textSize="25sp"
             android:textColor="#fff"
