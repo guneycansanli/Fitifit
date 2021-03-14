@@ -25,7 +25,13 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".MyUserToDoEdit"></activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".BmiResultActivity"></activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".BmiCalculatorActivity" />
+        <activity android:name=".MyUserToDoEdit" />
         <activity
             android:name=".StopWatchActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
