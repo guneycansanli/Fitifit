@@ -172,7 +172,7 @@ public class BmiCalculatorActivity extends AppCompatActivity {
 
     private void CalculateBMI() {
 
-        float BMI = weight / (height * height);
+        float BMI = count_weight / (height * height);
         Intent intent = new Intent(BmiCalculatorActivity.this, BmiResultActivity.class);
         intent.putExtra("BMI", BMI);
         intent.putExtra("age", age.getText().toString());
