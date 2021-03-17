@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CaloriCounter.InputMove">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:background="#46A55F"
+        android:text="record"
+        android:textColor="#FFF"
+        android:textSize="30dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/reading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="exercise"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/exerciseName_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lost calories / hour"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/exerciseCaloriesLost_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#46A55F"
+            android:text="add"
+            android:textColor="#FFF"
+            android:onClick="addToList"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:onClick="goToOverview"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:background="#FFF"
+            android:src="@drawable/ic_baseline_history_24"/>
+
+        <ImageButton
+            android:onClick="goToRecord"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:background="#46A55F"
+            android:src="@drawable/ic_baseline_history_24"/>
+
+        <ImageButton
+            android:onClick="goToHistory"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:background="#FFF"
+            android:src="@drawable/ic_baseline_history_24"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

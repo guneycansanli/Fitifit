@@ -41,6 +41,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-firestore:22.0.1'
+    implementation 'com.applandeo:material-calendar-view:1.7.0'
+    implementation 'im.dacer:AndroidCharts:1.0.4'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 

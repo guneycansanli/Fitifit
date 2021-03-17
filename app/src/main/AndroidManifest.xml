@@ -25,12 +25,21 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
+        <activity android:name=".CaloriCounter.InputEat"></activity>
+        <activity android:name=".CaloriCounter.CalculateMoveCalories" />
+        <activity android:name=".CaloriCounter.InputMove" />
+        <activity android:name=".CaloriCounter.MoveActivity" />
+        <activity android:name=".CaloriCounter.OverviewActivity" />
+        <activity android:name=".CaloriCounter.HistoryController" />
+        <activity android:name=".CaloriCounter.CalculateEatCalories" />
+        <activity android:name=".CaloriCounter.EatActivity" />
+        <activity android:name=".CaloriCounter.GetStart" />
         <activity
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name=".BmiResultActivity"></activity>
+            android:name=".BmiResultActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name=".BmiCalculatorActivity" />
+            android:name=".BmiCalculatorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".MyUserToDoEdit" />
         <activity
             android:name=".StopWatchActivity"

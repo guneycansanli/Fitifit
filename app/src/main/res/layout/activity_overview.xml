@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".CaloriCounter.OverviewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:background="#46A55F"
+        android:text="Overview"
+        android:textColor="#FFF"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <view
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            class="im.dacer.androidcharts.PieView"
+            android:id="@+id/pie_view" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@color/startBlue"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/startBlue"
+            android:text="  How much you can eat more : "/>
+
+        <TextView
+            android:id="@+id/chartGotCalories_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/endBlue"
+            android:layout_alignParentTop="true"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="You can get"
+            android:textSize="30dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:textColor="#46A55F" />
+
+        <TextView
+            android:id="@+id/basicCalories"
+            android:text="0"
+            android:textSize="50dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:text="kcal"
+            android:textSize="30dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="you_got"
+            android:textSize="30dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:textColor="#46A55F" />
+
+        <TextView
+            android:id="@+id/gotCalories"
+            android:text="0"
+            android:textSize="50dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:text="kcal"
+            android:textSize="30dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="you_lost"
+            android:textSize="30dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <TextView
+            android:id="@+id/lostCalories"
+            android:text="0"
+            android:textSize="50dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:text="kcal"
+            android:textSize="30dp"
+            android:textColor="#46A55F"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="30dp"
+            android:background="#46A55F"
+            android:src="@drawable/ic_baseline_history_24" />
+
+        <ImageButton
+            android:onClick="goToRecord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="30dp"
+            android:background="#FFF"
+            android:src="@drawable/ic_baseline_history_24" />
+
+        <ImageButton
+            android:onClick="goToHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="30dp"
+            android:background="#FFF"
+            android:src="@drawable/ic_baseline_history_24" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
