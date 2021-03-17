@@ -28,8 +28,6 @@ public class InputEat extends AppCompatActivity {
         foodName = findViewById(R.id.foodName);
         caloriesPerGram = findViewById(R.id.caloriesPerGram);
 
-
-
     }
 
     public void goToHistory(View view) {

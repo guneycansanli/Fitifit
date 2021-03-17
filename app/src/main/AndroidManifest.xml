@@ -33,7 +33,9 @@
         <activity android:name=".CaloriCounter.HistoryController" />
         <activity android:name=".CaloriCounter.CalculateEatCalories" />
         <activity android:name=".CaloriCounter.EatActivity" />
-        <activity android:name=".CaloriCounter.GetStart" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.GetStart" />
         <activity
             android:name=".BmiResultActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
