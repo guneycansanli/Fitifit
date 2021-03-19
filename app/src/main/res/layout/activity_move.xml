@@ -28,7 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/style_offbtn"
-            android:text="Eat"
+            android:text="Yemek"
+            android:padding="10dp"
             android:textSize="30dp"
             android:textColor="#46A55F"
             android:layout_margin="10dp"/>
@@ -37,7 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/style_onbtn"
-            android:text="Move"
+            android:text="Hareket"
+            android:padding="10dp"
             android:textSize="30dp"
             android:textColor="#FFF"
             android:layout_margin="10dp"/>
@@ -46,26 +48,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="wrap_content">
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:layout_height="100dp"
             android:background="#46A55F"
-            android:text="choose from list"
-            android:textSize="30dp"
+            android:text="Listeden Sec"
+            android:layout_weight="1"
+            android:textSize="20sp"
             android:textColor="#FFF"/>
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:background="#FFF"
             android:onClick="MoveInput"
-            android:padding="30dp"
-            android:text="input new food"
+            android:layout_weight="1"
+            android:text="Yeni Hareket"
             android:textColor="#46A55F"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
@@ -104,7 +107,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_summary_update"/>
 
         <ImageButton
             android:layout_width="0dp"
@@ -112,7 +115,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#46A55F"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_history_update"/>
 
         <ImageButton
             android:onClick="goToHistory"
@@ -121,7 +124,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_record_update"/>
 
     </LinearLayout>
 

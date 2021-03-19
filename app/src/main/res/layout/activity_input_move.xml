@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="30dp"
         android:background="#46A55F"
-        android:text="record"
+        android:text="Kayıt"
         android:textColor="#FFF"
         android:textSize="30dp"
         android:gravity="center" />
@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="exercise"
+            android:text="Egzersiz Adı"
             android:textSize="30dp" />
 
         <EditText
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lost calories / hour"
+            android:text="Kaybedilen Kalori/ Saat"
             android:textSize="30dp" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#46A55F"
-            android:text="add"
+            android:text="Ekle"
             android:textColor="#FFF"
             android:onClick="addToList"/>
 
@@ -70,27 +70,30 @@
 
         <ImageButton
             android:onClick="goToOverview"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.3"
             android:layout_height="wrap_content"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_summary_update"/>
 
         <ImageButton
             android:onClick="goToRecord"
-            android:layout_width="130dp"
+            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
             android:background="#46A55F"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_record_update"/>
 
         <ImageButton
             android:onClick="goToHistory"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
+            android:layout_weight="0.3"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_history_update"/>
 
     </LinearLayout>
 

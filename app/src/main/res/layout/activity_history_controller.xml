@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="30dp"
         android:background="#46A55F"
-        android:text="History"
+        android:text="Geçmiş"
         android:textColor="#FFF"
         android:textSize="50dp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#46A55F"
-            android:text="choose date"
+            android:text="Tarih Seç"
             android:textColor="#FFF"
             android:textAllCaps="false" />
 
@@ -66,7 +66,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_summary_update" />
 
         <ImageButton
             android:layout_width="0dp"
@@ -75,7 +75,7 @@
             android:padding="30dp"
             android:onClick="goToRecord"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_record_update" />
 
         <ImageButton
             android:layout_width="0dp"
@@ -83,7 +83,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#46A55F"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_history_update" />
 
     </LinearLayout>
 

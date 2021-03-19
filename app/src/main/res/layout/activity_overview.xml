@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="30dp"
         android:background="#46A55F"
-        android:text="Overview"
+        android:text="Özet"
         android:textColor="#FFF"
         android:textSize="50dp"
         android:textStyle="bold"
@@ -40,20 +40,22 @@
 
         <TextView
             android:layout_gravity="center"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@color/startBlue"/>
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/background"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/startBlue"
-            android:text="  How much you can eat more : "/>
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text=" Alabileceğin Kalori: "/>
 
         <TextView
             android:id="@+id/chartGotCalories_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/endBlue"
+            android:textSize="20sp"
+            android:textColor="#000000"
             android:layout_alignParentTop="true"
             android:gravity="center"/>
     </LinearLayout>
@@ -66,17 +68,17 @@
         android:gravity="center">
 
         <TextView
-            android:text="You can get"
-            android:textSize="30dp"
+            android:text="Alabilirsin"
+            android:textSize="25sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
+            android:layout_weight="0.4"
             android:textColor="#46A55F" />
 
         <TextView
             android:id="@+id/basicCalories"
             android:text="0"
-            android:textSize="50dp"
+            android:textSize="35sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -87,11 +89,11 @@
 
         <TextView
             android:text="kcal"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
+            android:layout_weight="0.2"
             android:gravity="right"/>
 
     </LinearLayout>
@@ -104,17 +106,17 @@
         android:gravity="center">
 
         <TextView
-            android:text="you_got"
-            android:textSize="30dp"
+            android:text="Aldin"
+            android:textSize="30sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
+            android:layout_weight="0.4"
             android:textColor="#46A55F" />
 
         <TextView
             android:id="@+id/gotCalories"
             android:text="0"
-            android:textSize="50dp"
+            android:textSize="35sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -125,11 +127,11 @@
 
         <TextView
             android:text="kcal"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
+            android:layout_weight="0.2"
             android:gravity="right" />
 
     </LinearLayout>
@@ -142,17 +144,17 @@
         android:gravity="center">
 
         <TextView
-            android:text="you_lost"
-            android:textSize="30dp"
+            android:text="Kayip"
+            android:textSize="30sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.4" />
 
         <TextView
             android:id="@+id/lostCalories"
             android:text="0"
-            android:textSize="50dp"
+            android:textSize="35sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -163,11 +165,11 @@
 
         <TextView
             android:text="kcal"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="#46A55F"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
+            android:layout_weight="0.2"
             android:gravity="right" />
 
     </LinearLayout>
@@ -185,7 +187,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#46A55F"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_summary_update" />
 
         <ImageButton
             android:onClick="goToRecord"
@@ -194,7 +196,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_record_update" />
 
         <ImageButton
             android:onClick="goToHistory"
@@ -203,7 +205,7 @@
             android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24" />
+            android:src="@drawable/ic_history_update" />
 
     </LinearLayout>
 

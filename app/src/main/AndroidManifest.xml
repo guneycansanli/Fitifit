@@ -25,14 +25,30 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".CaloriCounter.InputEat"></activity>
-        <activity android:name=".CaloriCounter.CalculateMoveCalories" />
-        <activity android:name=".CaloriCounter.InputMove" />
-        <activity android:name=".CaloriCounter.MoveActivity" />
-        <activity android:name=".CaloriCounter.OverviewActivity" />
-        <activity android:name=".CaloriCounter.HistoryController" />
-        <activity android:name=".CaloriCounter.CalculateEatCalories" />
-        <activity android:name=".CaloriCounter.EatActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.InputEat"></activity>
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.CalculateMoveCalories" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.InputMove" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.MoveActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.OverviewActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.HistoryController" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.CalculateEatCalories" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".CaloriCounter.EatActivity" />
         <activity
             android:theme="@style/AppTheme"
             android:name=".CaloriCounter.GetStart" />

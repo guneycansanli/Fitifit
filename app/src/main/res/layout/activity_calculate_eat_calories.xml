@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="item"/>
+            android:text="Yiyecek"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 android:id="@+id/gram"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:hint="grams"
+                android:hint="gram"
                 android:inputType="number" />
         </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
-                android:text="calories"/>
+                android:text="Kalori"/>
         </LinearLayout>
 
 
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#46A55F"
-            android:text="Calculate"
+            android:text="Hesapla"
             android:textColor="#FFF"
             android:onClick="calculateTotal"/>
 
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#46A55F"
-            android:text="Add to history"
+            android:text="Geçmişe Ekle"
             android:textColor="#FFF"
             android:onClick="addToHistory"/>
 
@@ -100,27 +100,30 @@
 
         <ImageButton
             android:onClick="goToOverview"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_send_message"/>
+            android:src="@drawable/ic_summary_update"/>
 
         <ImageButton
             android:onClick="goToRecord"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#46A55F"
-            android:src="@drawable/ic_send_message"/>
+            android:src="@drawable/ic_record_update"/>
 
         <ImageButton
             android:onClick="goToHistory"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.3"
             android:padding="30dp"
             android:background="#FFF"
-            android:src="@drawable/ic_baseline_history_24"/>
+            android:src="@drawable/ic_history_update"/>
 
     </LinearLayout>
 

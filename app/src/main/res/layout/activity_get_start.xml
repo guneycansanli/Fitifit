@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calorie Calculator"
+            android:text="Kalori Hesaplayıcı"
             android:textSize="30sp"
             android:textColor="#46A55F"
             android:textStyle="bold"
@@ -30,7 +30,7 @@
             android:textSize="18sp"
             android:textColor="#46A55F"
             android:textStyle="bold"
-            android:text="Select your gender" />
+            android:text="Cinsiyet Seçiniz" />
 
         <RadioGroup
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,7 +44,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="Female"
+                android:text="Kadın"
                 android:textColor="#46A55F"
                 android:onClick="onRadioButtonClicked" />
 
@@ -53,7 +53,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="Male"
+                android:text="Erkek"
                 android:textColor="#46A55F"
                 android:onClick="onRadioButtonClicked" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="Other"
+                android:text="Diğer"
                 android:textColor="#46A55F"
                 android:onClick="onRadioButtonClicked" />
 
@@ -74,7 +74,7 @@
             android:textSize="18sp"
             android:textColor="#46A55F"
             android:textStyle="bold"
-            android:text="Enter the weight you hope" />
+            android:text="Olmak istediğiniz ağırlık" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,7 +107,7 @@
             android:textSize="18sp"
             android:textColor="#46A55F"
             android:textStyle="bold"
-            android:text="Enter the current weight" />
+            android:text="Güncel ağırlık" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,7 +141,7 @@
             android:textSize="18sp"
             android:background="#46A55F"
             android:textColor="#FFF"
-            android:text="Calculate calories in a day"
+            android:text="Günlük Kalori Hesapla"
             android:textAllCaps="false" />
 
         <LinearLayout
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#46A55F"
-                android:text="you now get" />
+                android:text="Zayıflamak için günde" />
 
             <TextView
                 android:id="@+id/calorieCurrent"
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textSize="50sp"
+                android:textSize="30sp"
                 android:textColor="#46A55F"
                 android:textStyle="bold"
                 android:text="____" />
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#46A55F"
-                android:text="cal in a day" />
+                android:text="Kalori" />
 
         </LinearLayout>
 
@@ -181,9 +181,10 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="#46A55F"
-            android:text="To lose / gain your weight..." />
+            android:text="Almanız gerekiyor" />
 
         <LinearLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -193,7 +194,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#46A55F"
-                android:text="You can get" />
+                android:text="Günde" />
 
             <TextView
                 android:id="@+id/calorieTarget"
@@ -201,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textSize="50sp"
+                android:textSize="30sp"
                 android:textColor="#46A55F"
                 android:textStyle="bold"
                 android:text="____" />
@@ -211,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#46A55F"
-                android:text="cal to day" />
+                android:text="Kalori alabilirsiniz" />
 
         </LinearLayout>
 
@@ -235,7 +236,7 @@
             android:background="#46A55F"
             android:textColor="#FFF"
             android:onClick="getStarted"
-            android:text="Get Started" />
+            android:text="Başla" />
 
     </LinearLayout>
 

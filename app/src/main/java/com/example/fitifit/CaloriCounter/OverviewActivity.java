@@ -97,18 +97,18 @@ public class OverviewActivity extends AppCompatActivity {
                     //to percentage
                     int percentageOfBurn = 100 * (sumOfEatCal - sumofMoveCal)/currentCalories ;
                     int percentageOfLeft = 100 * (sumofMoveCal) / currentCalories;
-//                    int percentageOfLeft = 100 * (currentCalories- sumOfEatCal) / currentCalories;
+  //                   int percentageOfLeft = 100 * (currentCalories- sumOfEatCal) / currentCalories;
                     System.out.println(percentageOfBurn);
 
-                    pieHelperArrayList.add(new PieHelper(percentageOfBurn, Color.rgb(78, 186, 106)));
+                    pieHelperArrayList.add(new PieHelper(percentageOfBurn, Color.rgb(179, 136, 255)));
                     pieHelperArrayList.add(new PieHelper(100-percentageOfBurn, Color.rgb(74, 141, 181)));
-//                    pieHelperArrayList.add(new PieHelper(percentageOfLeft, Color.BLUE));
+                    pieHelperArrayList.add(new PieHelper(percentageOfLeft, Color.BLUE));
 
                     pieView.setDate(pieHelperArrayList);
                     pieView.showPercentLabel(false); //optional
 
                 }else {
-                    Toast.makeText(OverviewActivity.this,"Please record today's activity",Toast.LENGTH_LONG).show();
+                    Toast.makeText(OverviewActivity.this,"Lütfen Bu gün için Hareket ve Yemek Kaydı Girin",Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -122,41 +122,41 @@ public class OverviewActivity extends AppCompatActivity {
 
         });
 
-        //        Intent intent = getIntent();
-//        if(intent.getStringExtra("sumOfCalories") != null) {
-//            String sumOfCalories = intent.getStringExtra("sumOfCalories");
-//            String sumOfMoveCal = intent.getStringExtra("sumOfMoveCal");
-//            String sumOfEatCal = intent.getStringExtra("sumOfEatCal");
-//
-//            System.out.println("sumOfCalories :" + sumOfCalories);
-//            System.out.println("sumOfMoveCal :" + sumOfMoveCal);
-//            System.out.println("sumOfEatCal :" + sumOfEatCal);
-//
-//            //to percentage
-//            int percentageOfEat = 100 * Integer.valueOf(sumOfEatCal) /
-//                    (Integer.valueOf(sumOfEatCal) + Integer.valueOf(sumOfMoveCal));
-//            int percentageOfMove = 100 * Integer.valueOf(sumOfMoveCal) /
-//                    (Integer.valueOf(sumOfEatCal) + Integer.valueOf(sumOfMoveCal));
-//
-//            System.out.println(percentageOfEat);
-//            System.out.println(percentageOfMove);
-//
-//            pieHelperArrayList.add(new PieHelper(percentageOfEat, Color.RED));
-//            pieHelperArrayList.add(new PieHelper(100 - percentageOfEat, Color.BLUE));
-//
-//
-//            pieView.setDate(pieHelperArrayList);
-////        pieView.selectedPie(2); //optional
-////        pieView.setOnPieClickListener(listener) //optional
-//            pieView.showPercentLabel(true); //optional
-//
-//            gotCalories = findViewById(R.id.gotCalories);
-//            lostCalories = findViewById(R.id.lostCalories);
-//
-//            gotCalories.setText(sumOfEatCal);
-//            lostCalories.setText(sumOfMoveCal);
-//
-//        }
+        Intent intent = getIntent();
+        if(intent.getStringExtra("sumOfCalories") != null) {
+           String sumOfCalories = intent.getStringExtra("sumOfCalories");
+            String sumOfMoveCal = intent.getStringExtra("sumOfMoveCal");
+            String sumOfEatCal = intent.getStringExtra("sumOfEatCal");
+
+            System.out.println("sumOfCalories :" + sumOfCalories);
+            System.out.println("sumOfMoveCal :" + sumOfMoveCal);
+            System.out.println("sumOfEatCal :" + sumOfEatCal);
+
+            //to percentage
+            int percentageOfEat = 100 * Integer.valueOf(sumOfEatCal) /
+                   (Integer.valueOf(sumOfEatCal) + Integer.valueOf(sumOfMoveCal));
+            int percentageOfMove = 100 * Integer.valueOf(sumOfMoveCal) /
+                   (Integer.valueOf(sumOfEatCal) + Integer.valueOf(sumOfMoveCal));
+
+            System.out.println(percentageOfEat);
+            System.out.println(percentageOfMove);
+
+            pieHelperArrayList.add(new PieHelper(percentageOfEat, Color.MAGENTA));
+            pieHelperArrayList.add(new PieHelper(100 - percentageOfEat, Color.RED));
+
+
+            pieView.setDate(pieHelperArrayList);
+        pieView.selectedPie(2); //optional
+       // pieView.setOnPieClickListener(listener) //optional
+         //   pieView.showPercentLabel(true); //optional
+
+           gotCalories = findViewById(R.id.gotCalories);
+            lostCalories = findViewById(R.id.lostCalories);
+
+            gotCalories.setText(sumOfEatCal);
+           lostCalories.setText(sumOfMoveCal);
+
+        }
 
     }
 
