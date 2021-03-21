@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-
+            //deneme
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
