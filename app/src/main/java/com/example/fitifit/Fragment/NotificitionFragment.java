@@ -11,12 +11,15 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.fitifit.ChatMainActivity;
+import com.example.fitifit.DieticianChatMainActivity;
 import com.example.fitifit.MyUserToDo;
 import com.example.fitifit.R;
+import com.example.fitifit.WaterActivity;
 
 public class NotificitionFragment extends Fragment {
 
-    private LinearLayout myToDo;
+    private LinearLayout myToDo, btn_chatWithDietician, btn_water;
 
 
     @Override
@@ -33,6 +36,8 @@ public class NotificitionFragment extends Fragment {
         View view=  inflater.inflate(R.layout.fragment_notificition, container, false);
 
         myToDo = view.findViewById(R.id.myToDo);
+        btn_chatWithDietician = view.findViewById(R.id.chatWithDietician);
+
 
         myToDo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +47,14 @@ public class NotificitionFragment extends Fragment {
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
         });
-
+        btn_chatWithDietician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), ChatMainActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
 
         return view;
 

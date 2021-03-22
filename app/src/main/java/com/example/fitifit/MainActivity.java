@@ -77,14 +77,15 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mToolbar = (Toolbar) findViewById(R.id.mainToolbar);
         setSupportActionBar(mToolbar);
-        check();
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_Layout,new ProfileFragment()).commit();
+       // check();
 
         if (mAuth.getCurrentUser() == null) {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);
             Toast.makeText(getApplicationContext(), "Lütfen Giriş Yapınız", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_Layout,new ProfileFragment()).commit();
         }
 
 
@@ -174,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-            //deneme
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

@@ -233,6 +233,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/water"
                 android:layout_width="100dp"
                 app:cardBackgroundColor="@color/white"
                 android:layout_height="wrap_content"
@@ -255,13 +256,13 @@
                     <ImageView
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:src="@drawable/ic_conversation" />
+                        android:src="@drawable/ic_drop" />
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="boss"
+                        android:text="Su Hatırlatıcı"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="@color/black"/>

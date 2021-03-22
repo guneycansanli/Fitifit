@@ -95,6 +95,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/chatWithDietician"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -113,17 +114,16 @@
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
-
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="5dp"
-                        android:src="@drawable/ic_drop" />
+                        android:src="@drawable/ic_conversation_awesome" />
 
 
                     <TextView
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Su "
+                        android:text="Diyetisyen İle Görüş"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:textSize="16sp" />
@@ -238,9 +238,9 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="18dp"
-                        android:src="@drawable/link"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:src="@drawable/ic_drop"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"/>
 
 
                     <TextView

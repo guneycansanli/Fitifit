@@ -22,6 +22,7 @@ import com.example.fitifit.FitStopWatchActivity;
 import com.example.fitifit.MainActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
+import com.example.fitifit.WaterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +37,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-    private CardView btn_chat, btn_chat_for_dietician, btn_timing, btnBmi, caloriCounter;
+    private CardView btn_chat, btn_chat_for_dietician, btn_timing, btnBmi, caloriCounter, btn_water;
     
     private String currentUid;
     private DatabaseReference myRef,reference;
@@ -64,7 +65,7 @@ public class ProfileFragment extends Fragment {
         btnBmi = view.findViewById(R.id.btnBmi);
         caloriCounter = view.findViewById(R.id.caloriCounter);
         btn_chat_for_dietician=view.findViewById(R.id.chatWithUser);
-        currentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        btn_water = view.findViewById(R.id.water);
 
         mUsers = new ArrayList<>();
         check();
@@ -113,6 +114,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), GetStart.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+        btn_water.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), WaterActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
@@ -170,7 +179,6 @@ public class ProfileFragment extends Fragment {
 
             }
         });
-        //deneme
     }
 
 }

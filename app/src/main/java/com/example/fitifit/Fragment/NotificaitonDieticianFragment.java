@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.fitifit.ChatMainActivity;
 import com.example.fitifit.DieticianChatMainActivity;
 import com.example.fitifit.R;
 import com.example.fitifit.SelectForTodo;
@@ -18,7 +19,7 @@ import com.example.fitifit.SelectForTodo;
 
 public class NotificaitonDieticianFragment extends Fragment {
 
-    private LinearLayout giveToDo;
+    private LinearLayout giveToDo, chatWithUser;
 
 
 
@@ -34,12 +35,22 @@ public class NotificaitonDieticianFragment extends Fragment {
         View view=  inflater.inflate(R.layout.fragment_notificaiton_dietician, container, false);
 
         giveToDo = view.findViewById(R.id.give_todo);
+        chatWithUser = view.findViewById(R.id.chatWithUser);
 
 
                 giveToDo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(getActivity(), SelectForTodo.class);
+                        startActivity(i);
+                        ((Activity) getActivity()).overridePendingTransition(0, 0);
+                    }
+                });
+
+                chatWithUser.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getActivity(), DieticianChatMainActivity.class);
                         startActivity(i);
                         ((Activity) getActivity()).overridePendingTransition(0, 0);
                     }

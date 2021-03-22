@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPurple"
     android:layout_height="match_parent"
+    android:background="@color/colorPurple"
     tools:context=".Fragment.NotificitionFragment">
 
     <TextView
@@ -33,44 +33,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview"/>
+        app:layout_constraintTop_toBottomOf="@+id/textview" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="330dp"
-        android:orientation="vertical"
-        android:background="@drawable/bg_menu"
-        android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_menu"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="3"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingLeft="16dp"
+            android:paddingTop="24dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="24dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_grenn"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_grenn"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="51dp"
@@ -82,51 +82,51 @@
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:layout_marginLeft="12dp"
                         android:text="Diyet Yaz"
                         android:textColor="#000000"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
+                android:id="@+id/chatWithUser"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#33FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_red"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_red"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
-
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="5dp"
-                        android:src="@drawable/ic_water_icon" />
+                        android:src="@drawable/ic_conservation_new_dietician" />
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
-                        android:textStyle="bold"
                         android:layout_height="wrap_content"
-                        android:text="Su"
+                        android:layout_marginLeft="12dp"
+                        android:text="Kullanıcı İle Görüş"
                         android:textColor="#000000"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -134,38 +134,38 @@
 
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#33FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/give_todo"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_yellow"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_yellow"
+                    android:orientation="vertical">
 
                     <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="5dp"
-                        android:src="@drawable/ic_todo_black"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"/>
+                        android:src="@drawable/ic_todo_black" />
 
 
                     <TextView
-                        android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
                         android:text="Günlük \nGörev ver"
                         android:textColor="#000000"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -174,81 +174,81 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="24dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="3"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="24dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_blue"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_blue"
+                    android:orientation="vertical">
 
                     <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="5dp"
-                        android:src="@drawable/ic_fitness_icon"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"/>
+                        android:src="@drawable/ic_fitness_icon" />
 
 
                     <TextView
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textAlignment="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="Egzersiz Ver"
+                        android:textAlignment="center"
                         android:textColor="#000000"
-                        android:textStyle="bold"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_purple"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_purple"
+                    android:orientation="vertical">
 
                     <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="18dp"
-                        android:src="@drawable/link"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:src="@drawable/ic_water_icon" />
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
                         android:text="Discover"
                         android:textColor="#FFF"
                         android:textSize="18sp" />
@@ -259,33 +259,33 @@
 
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_pink"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp">
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_pink"
+                    android:orientation="vertical">
 
                     <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="18dp"
-                        android:src="@drawable/checked"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:src="@drawable/checked" />
 
 
                     <TextView
-                        android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
                         android:text="Discover"
                         android:textColor="#FFF"
                         android:textSize="18sp" />
@@ -295,7 +295,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
 
     </LinearLayout>

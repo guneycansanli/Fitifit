@@ -95,7 +95,9 @@ public class RegisterActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 registerProgress.dismiss();
                                 Intent mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                                mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(mainIntent);
+                                finish();
                             }
                         }
                     });

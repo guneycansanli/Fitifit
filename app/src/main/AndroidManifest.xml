@@ -27,31 +27,34 @@
         android:theme="@style/Theme.Fitifit">
         <activity
             android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.InputEat"></activity>
+            android:name=".WaterActivity"></activity>
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.CalculateMoveCalories" />
+            android:name=".CaloriCounter.InputEat"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.InputMove" />
+            android:name=".CaloriCounter.CalculateMoveCalories"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.MoveActivity" />
+            android:name=".CaloriCounter.InputMove"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.OverviewActivity" />
+            android:name=".CaloriCounter.MoveActivity"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.HistoryController" />
+            android:name=".CaloriCounter.OverviewActivity"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.CalculateEatCalories" />
+            android:name=".CaloriCounter.HistoryController"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.EatActivity" />
+            android:name=".CaloriCounter.CalculateEatCalories"
+            android:theme="@style/AppTheme" />
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".CaloriCounter.GetStart" />
+            android:name=".CaloriCounter.EatActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CaloriCounter.GetStart"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".BmiResultActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
