@@ -60,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(loginIntent);
         }
         else if(item.getItemId() == R.id.actions_settings){
-           Intent settingsIntent= new Intent(MainActivity.this,SettingsActivity.class);
-           startActivity(settingsIntent);
+           CheckForSettings();
         }
         return true;
     }
@@ -172,6 +171,55 @@ public class MainActivity extends AppCompatActivity {
                     assert firebaseUser != null;
                     if (user.getUid().equals(firebaseUser.getUid())) {
                       selectedFragment=new NotificaitonDieticianFragment();
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void CheckForSettings(){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference referenceDietician = FirebaseDatabase.getInstance().getReference("Dieticians");   //This Function for which accound we sign in (Dietician Or User)
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mUsers.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserProfileModel user = dataSnapshot.getValue(UserProfileModel.class);
+
+                    assert user != null;
+                    assert firebaseUser != null;
+                    if (user.getUid().equals(firebaseUser.getUid())) {
+                        Intent settingsIntent= new Intent(MainActivity.this,SettingsActivity.class);
+                        startActivity(settingsIntent);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        referenceDietician.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mUsers.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserProfileModel user = dataSnapshot.getValue(UserProfileModel.class);
+
+                    assert user != null;
+                    assert firebaseUser != null;
+                    if (user.getUid().equals(firebaseUser.getUid())) {
+                        Intent settingsIntent= new Intent(MainActivity.this,SettingsDieticianActivity.class);
+                        startActivity(settingsIntent);
                     }
                 }
             }
