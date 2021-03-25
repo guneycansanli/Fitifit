@@ -25,7 +25,10 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".SettingsDieticianActivity"></activity>
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".WaterTrackerActivity" />
+        <activity android:name=".SettingsDieticianActivity" />
         <activity
             android:name=".WaterActivity"
             android:theme="@style/AppTheme" />

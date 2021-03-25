@@ -220,6 +220,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/myWater"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -247,7 +248,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Discover"
+                        android:text="Su"
                         android:textColor="#FFF"
                         android:textSize="18sp" />
 

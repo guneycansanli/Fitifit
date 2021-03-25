@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WaterTrackerActivity">
+
+    <Button
+        android:id="@+id/generujButton"
+        android:layout_width="290dp"
+        android:layout_height="51dp"
+        android:onClick="generateWater"
+        android:background="@drawable/bg_red"
+        android:text="Yeni Bir Gün için Su için!"
+        app:layout_constraintBottom_toTopOf="@+id/tłoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tłoImageView"
+        app:layout_constraintVertical_bias="0.525" />
+
+    <ImageView
+        android:id="@+id/tłoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bottle_water" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="407dp"
+        android:layout_height="50dp"
+        android:max="2500"
+        android:progress="250"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tłoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/tłoImageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/szklankaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue"
+        android:padding="10dp"
+        android:text="Bardağımı İçtim!"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generujButton"
+        app:layout_constraintVertical_bias="0.549" />
+
+    <ProgressBar
+        android:id="@+id/vertical_progressbar"
+        style="@style/Widget.ProgressBar.Vertical"
+        android:layout_width="139dp"
+        android:layout_height="264dp"
+        android:max="2501"
+        android:progress="250"
+        app:layout_constraintBottom_toBottomOf="@+id/tłoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668" />
+
+    <TextView
+        android:id="@+id/wodaLeftTextView"
+        android:layout_width="408dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_blue"
+        android:textAlignment="center"
+        android:textColor="@color/grayLight"
+        android:textStyle="bold"
+        android:text="10 bardak İçmen Gerekiyor!"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/szklankaButton"
+        app:layout_constraintVertical_bias="0.913" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
