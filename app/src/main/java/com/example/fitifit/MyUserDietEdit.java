@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fitifit.Fragment.NotificaitonDieticianFragment;
 import com.example.fitifit.Model.UserProfileModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,51 +25,46 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyUserToDoEdit extends AppCompatActivity {
+public class MyUserDietEdit extends AppCompatActivity {
 
-    private EditText titleDoes, descDoes, dateDoes;
-    private Button btnDelete;
+    private EditText foodEdit, commentEdit ;
+    private Button deleteFood;
     private DatabaseReference reference;
-    private String task;
+    private String food_id;
     private FirebaseAuth firebaseAuth;
     private List<UserProfileModel> mUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_user_to_do_edit);
+        setContentView(R.layout.activity_my_user_diet_edit);
 
-        titleDoes = findViewById(R.id.titledoes);
-        descDoes = findViewById(R.id.descdoes);
-        dateDoes = findViewById(R.id.datedoes);
-        titleDoes.setClickable(false);
-        descDoes.setClickable(false);
+        foodEdit = findViewById(R.id.foodEdit);
+        commentEdit = findViewById(R.id.commentEdit);
+        deleteFood = findViewById(R.id.deleteFood);
 
         mUsers = new ArrayList<>();
-        check(); //Only users can delete their To-Do
+        check(); //Only users can delete User's Diet
 
-        btnDelete = findViewById(R.id.btnDelete);
-
-        //get value from page
-
-        titleDoes.setText(getIntent().getStringExtra("titledoes"));
-        descDoes.setText(getIntent().getStringExtra("descdoes"));
-        dateDoes.setText(getIntent().getStringExtra("datedoes"));
-        task = getIntent().getStringExtra("task");     //normalde tasklara id vermeden yapiliyordu ama sadece kullanici göruyordu silebilmesi icin
+        foodEdit.setText(getIntent().getStringExtra("food"));
+        commentEdit.setText(getIntent().getStringExtra("comment"));
+        food_id = getIntent().getStringExtra("food_id");
+        String userId = getIntent().getStringExtra("user_id");
+        String Time = getIntent().getStringExtra("time");
 
         firebaseAuth = FirebaseAuth.getInstance();
         String myUid = firebaseAuth.getCurrentUser().getUid();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("ToDo").child(myUid).child(task);
+        reference = FirebaseDatabase.getInstance().getReference().child("Diet").child(userId).child(Time).child(food_id);
 
-        btnDelete.setOnClickListener(new View.OnClickListener() {
+        deleteFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Intent a = new Intent(MyUserToDoEdit.this, MyUserToDo.class);
+                            Intent a = new Intent(MyUserDietEdit.this, MainActivity.class);
                             startActivity(a);
                         } else {
                             Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
@@ -83,10 +79,10 @@ public class MyUserToDoEdit extends AppCompatActivity {
 
     private void check() {
         FirebaseUser firebaseU = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference referenceDietician = FirebaseDatabase.getInstance().getReference("Dieticians");   //This Function for which accound we sign in (Dietician Or User)
+        DatabaseReference referenceUsers = FirebaseDatabase.getInstance().getReference("Users");   //This Function for which accound we sign in (Dietician Or User)
 
 
-        referenceDietician.addValueEventListener(new ValueEventListener() {
+        referenceUsers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mUsers.clear();
@@ -96,7 +92,7 @@ public class MyUserToDoEdit extends AppCompatActivity {
                     assert user != null;
                     assert firebaseU != null;
                     if (user.getUid().equals(firebaseU.getUid())) {
-                        btnDelete.setVisibility(View.GONE);
+                        deleteFood.setVisibility(View.GONE);
                     }
                 }
             }
@@ -108,6 +104,4 @@ public class MyUserToDoEdit extends AppCompatActivity {
         });
 
     }
-
-
 }

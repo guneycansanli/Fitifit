@@ -20,7 +20,7 @@ import com.example.fitifit.WaterTrackerActivity;
 
 public class NotificitionFragment extends Fragment {
 
-    private LinearLayout myToDo, btn_chatWithDietician, myWater;
+    private LinearLayout myToDo, btn_chatWithDietician, myWater, myDiet;
 
 
     @Override
@@ -60,6 +60,15 @@ public class NotificitionFragment extends Fragment {
 
 
         myWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent waterIntent = new Intent(getActivity(), WaterTrackerActivity.class);
+                startActivity(waterIntent);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+
+        myDiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent waterIntent = new Intent(getActivity(), WaterTrackerActivity.class);

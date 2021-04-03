@@ -27,7 +27,15 @@
         android:theme="@style/Theme.Fitifit">
         <activity
             android:theme="@style/AppTheme"
-            android:name=".WaterTrackerActivity" />
+            android:name=".GiveDietActivity"></activity>
+        <activity android:name=".MyUserDietEdit" />
+        <activity
+            android:name=".UserDietActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".GiveDietSelectUserActivity" />
+        <activity
+            android:name=".WaterTrackerActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".SettingsDieticianActivity" />
         <activity
             android:name=".WaterActivity"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:orientation="horizontal"
+    android:layout_marginBottom="10dp"
+    android:layout_height="25dp">
+
+
+        <TextView
+            android:id="@+id/food"
+            android:textColor="@color/black"
+            android:text="Yumurta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/comment"
+            android:text="Yumartayı Yiyiniz"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

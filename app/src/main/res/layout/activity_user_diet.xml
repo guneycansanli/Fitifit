@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    tools:context=".UserDietActivity">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:id="@+id/top">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg_user_diet"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:background="@drawable/ic_diet_background_update"
+                android:layout_width="200dp"
+                android:layout_height="200dp">
+
+            </LinearLayout>
+
+            <TextView
+                android:textColor="@color/white"
+                android:text="Diyet"
+                android:textStyle="bold"
+                android:textSize="45sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_diet_bottom"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="350dp"
+            android:layout_height="410dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Kahvaltı" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Ara Öğün" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Öğle"/>
+            </TableRow>
+
+            <TableRow>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myDietBreakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myDietSnacks"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myDietLunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Ara Öğün" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Akşam" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/grayLight"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:text="Akşam" />
+            </TableRow>
+
+            <TableRow>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myDietSnackNight"
+                    android:layout_width="60dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myDietDinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:visibility="invisible"
+                    android:layout_weight="1">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </TableRow>
+
+
+        </TableLayout>
+        <RelativeLayout
+            android:id="@+id/giveDiet"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_carrot_background">
+        <TextView
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="20dp"
+            android:text="Diyet Ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

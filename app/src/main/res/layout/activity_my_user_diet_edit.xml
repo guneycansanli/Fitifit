@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradientbackground"
+    android:layout_height="match_parent"
+    tools:context=".MyUserDietEdit">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/gradientbackground"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="350dp"
+        android:layout_height="200dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_marginLeft="30dp"
+               android:layout_marginTop="20dp"
+               android:textSize="30sp"
+               android:textColor="@color/grayLight"
+               android:text="Yemek:"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+           <EditText
+               android:id="@+id/foodEdit"
+               android:layout_marginTop="15dp"
+               android:textSize="20sp"
+               android:paddingLeft="5dp"
+               android:background="@drawable/bginputtask"
+               android:textColor="@color/black"
+               android:text="Yemek"
+               android:maxLength="15"
+               android:layout_marginRight="10dp"
+               android:layout_marginLeft="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+       </LinearLayout>
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/grayLight"
+                android:text="Açıklama:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/commentEdit"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:text="Aciklama"
+                android:background="@drawable/bginputtask"
+                android:inputType="text|textMultiLine|textCapSentences"
+                android:maxLines="3"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/deleteFood"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:text="Sil"
+                android:textColor="@color/white"
+                android:background="@drawable/gradientbackground"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+     </LinearLayout>
+
+</LinearLayout>

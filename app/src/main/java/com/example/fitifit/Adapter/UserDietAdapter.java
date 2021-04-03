@@ -12,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.fitifit.MessageActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
+import com.example.fitifit.UserDietActivity;
 import com.example.fitifit.UserToDo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,28 +23,28 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserToDoAdapter extends RecyclerView.Adapter<UserToDoAdapter.ViewHolder> {
+public class UserDietAdapter extends RecyclerView.Adapter<UserDietAdapter.ViewHolder> {
 
     private Context mContext;
     private List<UserProfileModel> mUsers;
     private FirebaseUser firebaseUser;
     private Intent intent;
 
-    public UserToDoAdapter(Context mContext, List<UserProfileModel> mUsers) {
+    public UserDietAdapter(Context mContext, List<UserProfileModel> mUsers) {
         this.mContext = mContext;
         this.mUsers = mUsers;
     }
 
     @NonNull
     @Override
-    public UserToDoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserDietAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(mContext).inflate(R.layout.user_profile,parent,false);
 
-        return new UserToDoAdapter.ViewHolder(view);
+        return new UserDietAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserToDoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserDietAdapter.ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         final UserProfileModel userProfileModel = mUsers.get(position);
         holder.btn_give_todo.setVisibility(View.VISIBLE);
@@ -60,7 +60,7 @@ public class UserToDoAdapter extends RecyclerView.Adapter<UserToDoAdapter.ViewHo
         holder.btn_give_todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(mContext, UserToDo.class);
+                intent = new Intent(mContext, UserDietActivity.class);
                 intent.putExtra("userid",userProfileModel.getUid());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
@@ -76,7 +76,7 @@ public class UserToDoAdapter extends RecyclerView.Adapter<UserToDoAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        public TextView userName, Uname;
+        public TextView userName, Uname ;
         public CircleImageView profile_photo;
         public Button btn_give_todo;
 
