@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.fitifit.ChatMainActivity;
 import com.example.fitifit.DieticianChatMainActivity;
+import com.example.fitifit.MyUserDiet;
 import com.example.fitifit.MyUserToDo;
 import com.example.fitifit.R;
 import com.example.fitifit.WaterActivity;
@@ -39,6 +40,7 @@ public class NotificitionFragment extends Fragment {
         myToDo = view.findViewById(R.id.myToDo);
         btn_chatWithDietician = view.findViewById(R.id.chatWithDietician);
         myWater = view.findViewById(R.id.myWater);
+        myDiet = view.findViewById(R.id.myDiet);
 
 
         myToDo.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +73,7 @@ public class NotificitionFragment extends Fragment {
         myDiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent waterIntent = new Intent(getActivity(), WaterTrackerActivity.class);
+                Intent waterIntent = new Intent(getActivity(), MyUserDiet.class);
                 startActivity(waterIntent);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }

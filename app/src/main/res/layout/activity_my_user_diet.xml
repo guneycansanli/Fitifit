@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:id="@+id/main"
     android:layout_height="match_parent"
-    tools:context=".UserDietActivity">
+    tools:context=".MyUserDiet">
 
     <LinearLayout
         app:layout_constraintTop_toTopOf="parent"
@@ -168,14 +167,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/ic_carrot_background">
-        <TextView
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="20dp"
-            android:text="Diyet Ver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         </RelativeLayout>
 
