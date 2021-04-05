@@ -25,7 +25,8 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".MyUserDiet"></activity>
+        <activity android:name=".BlogWebActivity"></activity>
+        <activity android:name=".MyUserDiet" />
         <activity
             android:name=".GiveDietActivity"
             android:theme="@style/AppTheme" />

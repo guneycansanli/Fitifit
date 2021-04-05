@@ -273,6 +273,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/blogWeb"
                 android:layout_width="100dp"
                 app:cardBackgroundColor="@color/white"
                 android:layout_height="wrap_content"
@@ -301,7 +302,7 @@
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="boss"
+                        android:text="Blog"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="@color/black"/>

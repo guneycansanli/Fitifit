@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="30dp"
         android:background="#46A55F"
-        android:text="Record"
+        android:text="Kayıt"
         android:textColor="#FFF"
         android:textSize="30dp"
         android:gravity="center" />

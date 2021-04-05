@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fitifit.BlogWebActivity;
 import com.example.fitifit.BmiCalculatorActivity;
 import com.example.fitifit.CaloriCounter.GetStart;
 import com.example.fitifit.ChatMainActivity;
@@ -37,7 +38,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-    private CardView btn_chat, btn_chat_for_dietician, btn_timing, btnBmi, caloriCounter, btn_water;
+    private CardView btn_chat, btn_chat_for_dietician, btn_timing, btnBmi, caloriCounter, btn_water, blogWeb;
     
     private String currentUid;
     private DatabaseReference myRef,reference;
@@ -66,6 +67,7 @@ public class ProfileFragment extends Fragment {
         caloriCounter = view.findViewById(R.id.caloriCounter);
         btn_chat_for_dietician=view.findViewById(R.id.chatWithUser);
         btn_water = view.findViewById(R.id.water);
+        blogWeb = view.findViewById(R.id.blogWeb);
 
         mUsers = new ArrayList<>();
         check();
@@ -127,7 +129,14 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-
+        blogWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), BlogWebActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
 
 
         return view;

@@ -58,7 +58,7 @@ public class InputMove extends AppCompatActivity {
             Move move = new Move(newExercise,newCaloriesLost);
             ref_move.child("move").child(id).setValue(move);
         }else {
-            Toast.makeText(this,"Please input exercise and calories lost",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Lütfen aktivite ve kaybedilen kaloriyi giriniz",Toast.LENGTH_LONG).show();
         }
 
     }
