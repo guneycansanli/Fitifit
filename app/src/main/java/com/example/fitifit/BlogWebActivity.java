@@ -17,7 +17,7 @@ public class BlogWebActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.selva.com.tr/saglikliyasam/");
+        webView.loadUrl("https://blog.fitwell.com.tr/tagged/saglikli-yasam");
 
     }
 

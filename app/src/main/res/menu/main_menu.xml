@@ -15,15 +15,15 @@
             android:title="Ayarlar" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Sosyal">
 
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:title="Share" />
+                android:title="Paylaş" />
             <item
                 android:id="@+id/nav_rate"
-                android:title="Rate Us"/>
+                android:title="Bize Puan Ver"/>
         </menu>
 
 

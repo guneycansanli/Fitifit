@@ -25,7 +25,10 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".BlogWebActivity"></activity>
+        <activity android:name=".MyUserWorkoutActivity"></activity>
+        <activity android:name=".UserWorkoutActivity" />
+        <activity android:name=".GiveWorkoutSelectUserActivity" />
+        <activity android:name=".BlogWebActivity" />
         <activity android:name=".MyUserDiet" />
         <activity
             android:name=".GiveDietActivity"

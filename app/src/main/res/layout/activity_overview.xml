@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:background="#46A55F"
+        android:background="@color/colorPurple"
         android:text="Özet"
         android:textColor="#FFF"
         android:textSize="50dp"
@@ -73,13 +73,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
-            android:textColor="#46A55F" />
+            android:textColor="@color/colorPurple" />
 
         <TextView
             android:id="@+id/basicCalories"
             android:text="0"
             android:textSize="35sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -90,7 +90,7 @@
         <TextView
             android:text="kcal"
             android:textSize="30sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
@@ -111,13 +111,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
-            android:textColor="#46A55F" />
+            android:textColor="@color/colorPurple" />
 
         <TextView
             android:id="@+id/gotCalories"
             android:text="0"
             android:textSize="35sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -128,7 +128,7 @@
         <TextView
             android:text="kcal"
             android:textSize="30sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
@@ -146,7 +146,7 @@
         <TextView
             android:text="Kayip"
             android:textSize="30sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4" />
@@ -155,7 +155,7 @@
             android:id="@+id/lostCalories"
             android:text="0"
             android:textSize="35sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -166,7 +166,7 @@
         <TextView
             android:text="kcal"
             android:textSize="30sp"
-            android:textColor="#46A55F"
+            android:textColor="@color/colorPurple"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
@@ -186,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:padding="30dp"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:src="@drawable/ic_summary_update" />
 
         <ImageButton

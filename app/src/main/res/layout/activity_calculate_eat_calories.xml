@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="#46A55F"
+        android:background="@color/colorPurple"
         android:text="Kayit"
         android:textColor="#FFF"
         android:textSize="50sp"
@@ -76,7 +76,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:text="Hesapla"
             android:textColor="#FFF"
             android:onClick="calculateTotal"/>
@@ -84,7 +84,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:text="Geçmişe Ekle"
             android:textColor="#FFF"
             android:onClick="addToHistory"/>
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:padding="30dp"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:src="@drawable/ic_record_update"/>
 
         <ImageButton

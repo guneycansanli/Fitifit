@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:background="#46A55F"
+        android:background="@color/colorPurple"
         android:text="Kayıt"
         android:textColor="#FFF"
         android:textSize="30dp"
@@ -54,7 +54,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:text="Ekle"
             android:textColor="#FFF"
             android:onClick="addToList"/>
@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:src="@drawable/ic_record_update"/>
 
         <ImageButton

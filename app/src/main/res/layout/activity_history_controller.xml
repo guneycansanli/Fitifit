@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:background="#46A55F"
+        android:background="@color/colorPurple"
         android:text="Geçmiş"
         android:textColor="#FFF"
         android:textSize="50dp"
@@ -29,7 +29,7 @@
             android:onClick="chooseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:text="Tarih Seç"
             android:textColor="#FFF"
             android:textAllCaps="false" />
@@ -42,7 +42,7 @@
             android:gravity="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#46A55F" />
+            android:textColor="@color/colorPurple" />
 
     </LinearLayout>
 
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:padding="30dp"
-            android:background="#46A55F"
+            android:background="@color/colorPurple"
             android:src="@drawable/ic_history_update" />
 
     </LinearLayout>
