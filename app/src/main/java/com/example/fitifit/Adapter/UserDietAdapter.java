@@ -47,7 +47,7 @@ public class UserDietAdapter extends RecyclerView.Adapter<UserDietAdapter.ViewHo
     public void onBindViewHolder(@NonNull UserDietAdapter.ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         final UserProfileModel userProfileModel = mUsers.get(position);
-        holder.btn_give_todo.setVisibility(View.VISIBLE);
+        holder.btn_give_diet.setVisibility(View.VISIBLE);
 
         holder.userName.setText(userProfileModel.getName());
         holder.Uname.setText(userProfileModel.getName());
@@ -57,7 +57,7 @@ public class UserDietAdapter extends RecyclerView.Adapter<UserDietAdapter.ViewHo
             Glide.with(mContext).load(userProfileModel.getImage()).into(holder.profile_photo);
         }
 
-        holder.btn_give_todo.setOnClickListener(new View.OnClickListener() {
+        holder.btn_give_diet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(mContext, UserDietActivity.class);
@@ -78,7 +78,7 @@ public class UserDietAdapter extends RecyclerView.Adapter<UserDietAdapter.ViewHo
     {
         public TextView userName, Uname ;
         public CircleImageView profile_photo;
-        public Button btn_give_todo;
+        public Button btn_give_diet;
 
 
 
@@ -88,7 +88,7 @@ public class UserDietAdapter extends RecyclerView.Adapter<UserDietAdapter.ViewHo
             userName = itemView.findViewById(R.id.txt_user_name);
             Uname = itemView.findViewById(R.id.txt_Uname);
             profile_photo = itemView.findViewById(R.id.profilePhoto);
-            btn_give_todo = itemView.findViewById(R.id.btn_give_todo);
+            btn_give_diet = itemView.findViewById(R.id.btn_give_diet);
 
 
         }

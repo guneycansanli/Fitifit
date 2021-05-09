@@ -46,7 +46,7 @@ public class UserWorkoutAdapter extends RecyclerView.Adapter<UserWorkoutAdapter.
     public void onBindViewHolder(@NonNull UserWorkoutAdapter.ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         final UserProfileModel userProfileModel = mUsers.get(position);
-        holder.btn_give_todo.setVisibility(View.VISIBLE);
+        holder.btn_give_workout.setVisibility(View.VISIBLE);
 
         holder.userName.setText(userProfileModel.getName());
         holder.Uname.setText(userProfileModel.getName());
@@ -56,7 +56,7 @@ public class UserWorkoutAdapter extends RecyclerView.Adapter<UserWorkoutAdapter.
             Glide.with(mContext).load(userProfileModel.getImage()).into(holder.profile_photo);
         }
 
-        holder.btn_give_todo.setOnClickListener(new View.OnClickListener() {
+        holder.btn_give_workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(mContext, UserWorkoutActivity.class);
@@ -76,7 +76,7 @@ public class UserWorkoutAdapter extends RecyclerView.Adapter<UserWorkoutAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView userName, Uname;
         public CircleImageView profile_photo;
-        public Button btn_give_todo;
+        public Button btn_give_workout;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -85,7 +85,7 @@ public class UserWorkoutAdapter extends RecyclerView.Adapter<UserWorkoutAdapter.
             userName = itemView.findViewById(R.id.txt_user_name);
             Uname = itemView.findViewById(R.id.txt_Uname);
             profile_photo = itemView.findViewById(R.id.profilePhoto);
-            btn_give_todo = itemView.findViewById(R.id.btn_give_todo);
+            btn_give_workout = itemView.findViewById(R.id.btn_give_workout);
 
 
         }

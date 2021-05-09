@@ -54,6 +54,25 @@
         android:background="#F1C179"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"/>
+    <Button
+        android:id="@+id/btn_give_diet"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:text="Diyet Ver"
+        android:background="#F34848"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:id="@+id/btn_give_workout"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:text="Spor Ver"
+        android:background="#EA4EEF"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
 
 
 </RelativeLayout>

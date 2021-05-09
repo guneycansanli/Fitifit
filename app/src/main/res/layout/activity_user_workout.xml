@@ -15,19 +15,21 @@
         android:padding="20dp">
 
         <ImageView
+            android:id="@+id/goHome"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:src="" />
+            android:src="@drawable/ic_home" />
 
         <ImageView
+            android:id="@+id/giveWorkout"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="#EDE0CA"
+            android:background="#C8E2E6"
             android:padding="5dp"
-            android:src="" />
+            android:src="@drawable/ic_add" />
 
     </RelativeLayout>
 
@@ -49,8 +51,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Antreman"
+                    android:fontFamily="@font/sf_ui_display_regular"
+                    android:text="Spor Merkezi"
                     android:textSize="28sp" />
 
                 <RelativeLayout
@@ -69,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="15dp"
-                        android:text="Search" />
+                        android:text="Ara" />
 
 
                     <ImageView
@@ -229,22 +231,24 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/sf_ui_display_regular"
                         android:layout_marginTop="50dp"
-                        android:text="absbasds"
+                        android:text="Spor Planı"
+                        android:textColor="@color/black"
                         android:textAllCaps="true"
-                        android:textColor="@color/colorAccent"
                         android:textSize="25sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Denemea" />
+                        android:text="Uzman kişiler tarafından size önerilen program" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="300dp"
+                    android:id="@+id/featured_recycler"
                     android:layout_toRightOf="@+id/featured_background"
                     android:background="#FAD3C7" />
 
@@ -265,9 +269,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="deneme"
+                        android:text="Spor"
+                        android:fontFamily="@font/sf_ui_display_regular"
                         android:textAllCaps="true"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <TextView
@@ -302,9 +307,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="deneme"
+                        android:text="Spor"
                         android:textAllCaps="true"
-                        android:textColor="@color/colorAccent"
+                        android:fontFamily="@font/sf_ui_display_regular"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <TextView
