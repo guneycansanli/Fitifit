@@ -116,7 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="deneme"
+                        android:text="Web "
                         android:textAlignment="center" />
 
                 </LinearLayout>
@@ -145,7 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="deneme2"
+                        android:text="Yakında"
                         android:textAlignment="center" />
 
                 </LinearLayout>
@@ -174,7 +174,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="deneme3"
+                        android:text="Yakında"
                         android:textAlignment="center" />
 
                 </LinearLayout>
@@ -203,7 +203,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="deneme"
+                        android:text="Yakında"
                         android:textAlignment="center" />
 
                 </LinearLayout>
@@ -269,7 +269,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Spor"
+                        android:text="Haftanın Programı"
                         android:fontFamily="@font/sf_ui_display_regular"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
@@ -280,7 +280,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:text="Viewall denem" />
+                        android:text="Haftanın enleri" />
 
 
                 </RelativeLayout>
@@ -307,7 +307,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Spor"
+                        android:text="Haber"
                         android:textAllCaps="true"
                         android:fontFamily="@font/sf_ui_display_regular"
                         android:textColor="@color/black"
@@ -318,7 +318,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:text="Viewall denem" />
+                        android:text="Haftanın haberleri" />
 
 
                 </RelativeLayout>

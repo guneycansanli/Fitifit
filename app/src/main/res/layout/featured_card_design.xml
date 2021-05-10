@@ -17,7 +17,7 @@
             android:id="@+id/featured_image"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:src="@drawable/backgroundfit"
+            android:src="@drawable/pushup"
             android:scaleType="centerCrop"/>
 
         <TextView
