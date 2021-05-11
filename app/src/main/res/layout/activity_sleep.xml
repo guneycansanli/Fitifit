@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SleepActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/mainTop"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="40dp"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/sleeping_404"
+        app:lottie_autoPlay="true"/>
+
+   <TextView
+       app:layout_constraintTop_toBottomOf="@+id/mainTop"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:layout_marginTop="20dp"
+       android:layout_width="wrap_content"
+       android:textAlignment="center"
+       android:padding="20dp"
+       android:fontFamily="@font/sf_ui_display_regular"
+       android:textSize="16sp"
+       android:text="Uyku vücut sistemlerini yavaşlatarak ve rahatlatarak, kalktığımızda kendimizi fiziksel olarak daha güçlü hissetmemizi sağlar. Kaliteli ve düzenli uyku size canlılık katarken güne enerjiyle başlayıp verimliliğinizi arttırır, sosyal ve sağlıklı olmanıza katkıda bulunur.
+Yapılan çalışmalar uykusuz kalanların metabolizmalarının daha yavaş çalıştığını, uyumadıkları için geç saatlerde enerji içeriği yüksek yağlı besin tüketimlerinin arttığını, böylece kilo kazanımlarının yüksek olduğunu göstermektedir. Ayrıca akşam yemeğinden sonra çikolata, kahve çay tüketimlerinizin yoğun olması kafein alımınızı artırarak uykusuz kalmanıza neden olabilir. Yine yağlı besin alımlarının fazla olması ve yoğun alkol tüketimi de uyku veriminizi düşürmektedir. "
+       android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

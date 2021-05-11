@@ -23,6 +23,7 @@ import com.example.fitifit.FitStopWatchActivity;
 import com.example.fitifit.MainActivity;
 import com.example.fitifit.Model.UserProfileModel;
 import com.example.fitifit.R;
+import com.example.fitifit.SleepActivity;
 import com.example.fitifit.WaterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,7 +39,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-    private CardView btn_chat, btn_timing, btnBmi, caloriCounter, btn_water, blogWeb;
+    private CardView btn_chat, btn_timing, btnBmi, caloriCounter, btn_water, blogWeb, sleepCard;
     
     private String currentUid;
     private DatabaseReference myRef,reference;
@@ -67,6 +68,7 @@ public class ProfileFragment extends Fragment {
         caloriCounter = view.findViewById(R.id.caloriCounter);
         btn_water = view.findViewById(R.id.water);
         blogWeb = view.findViewById(R.id.blogWeb);
+        sleepCard=view.findViewById(R.id.sleepCard);
 
         mUsers = new ArrayList<>();
 
@@ -119,6 +121,15 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), BlogWebActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+
+        sleepCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), SleepActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
