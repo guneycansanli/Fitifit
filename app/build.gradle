@@ -45,6 +45,7 @@ dependencies {
     implementation 'im.dacer:AndroidCharts:1.0.4'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.airbnb.android:lottie:3.7.0'
 
 
 
