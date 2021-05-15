@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.fitifit.HelperClasses.FeaturedAdapter;
@@ -34,6 +36,7 @@ public class MyUserWorkoutActivity extends AppCompatActivity {
     private ImageView goHome;
     private ArrayList<FeaturedHelperClass> featuredWorkouts;
     private FirebaseAuth firebaseUser;
+    private RelativeLayout cardSportWeb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class MyUserWorkoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_user_workout);
 
         goHome = findViewById(R.id.goHome);
+        cardSportWeb = findViewById(R.id.sportWeb);
 
         //Hooks
         featuredRecycler = findViewById(R.id.featured_recycler);
@@ -54,6 +58,15 @@ public class MyUserWorkoutActivity extends AppCompatActivity {
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);  //coming back engellendi
                 startActivity(i);
                 finish();
+            }
+        });
+
+        cardSportWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MyUserWorkoutActivity.this, SportWebActivity.class);
+                startActivity(i);
+                ((Activity) MyUserWorkoutActivity.this).overridePendingTransition(0, 0);
             }
         });
 

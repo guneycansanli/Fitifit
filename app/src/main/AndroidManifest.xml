@@ -25,7 +25,8 @@
         android:roundIcon="@drawable/ic_fitifit_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitifit">
-        <activity android:name=".SleepActivity"></activity>
+        <activity android:name=".SportWebActivity"></activity>
+        <activity android:name=".SleepActivity" />
         <activity android:name=".WaterDieticianActivity" />
         <activity
             android:name=".GiveWorkoutActivity"
