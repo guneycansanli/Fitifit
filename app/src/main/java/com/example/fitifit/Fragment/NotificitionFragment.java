@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.fitifit.BuyPersonalActivity;
 import com.example.fitifit.ChatMainActivity;
 import com.example.fitifit.DieticianChatMainActivity;
 import com.example.fitifit.MyUserDiet;
@@ -24,7 +25,7 @@ import com.example.fitifit.WaterTrackerActivity;
 
 public class NotificitionFragment extends Fragment {
 
-    private LinearLayout myToDo, btn_chatWithDietician, myWater, myDiet, mySport;
+    private LinearLayout myToDo, btn_chatWithDietician, myWater, myDiet, mySport, buyDoctor;
 
 
     @Override
@@ -44,6 +45,7 @@ public class NotificitionFragment extends Fragment {
         myWater = view.findViewById(R.id.myWater);
         myDiet = view.findViewById(R.id.myDiet);
         mySport = view.findViewById(R.id.mySport);
+        buyDoctor = view.findViewById(R.id.buyDoctor);
 
 
         myToDo.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +88,15 @@ public class NotificitionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent mySportIntent = new Intent(getActivity(), MyUserWorkoutActivity.class);
+                startActivity(mySportIntent);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+
+        buyDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mySportIntent = new Intent(getActivity(), BuyPersonalActivity.class);
                 startActivity(mySportIntent);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
