@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -50,12 +51,13 @@ public class MyPlanActivity extends AppCompatActivity {
                         snapshot.getRef().child("packetDesc").setValue(edtPacketDesc.getText().toString());
                         snapshot.getRef().child("packetPrize").setValue(edtPacketPrize.getText().toString());
                         snapshot.getRef().child("user_id").setValue(doctorUid);
-                        getDatas(doctorUid);
+                       // getDatas(doctorUid);
+                        Toast.makeText(getApplicationContext(), "Paketiniz Guncellendi ", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        Toast.makeText(getApplicationContext(), "Basarisiz islem", Toast.LENGTH_SHORT).show();
                     }
                 });
 
