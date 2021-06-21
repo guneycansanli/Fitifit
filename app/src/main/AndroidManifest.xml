@@ -28,7 +28,9 @@
         <activity
             android:name=".MyPlanActivity"
             android:theme="@style/AppTheme"></activity>
-        <activity android:name=".BuyPersonalActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".BuyPersonalActivity" />
         <activity android:name=".SportWebActivity" />
         <activity android:name=".SleepActivity" />
         <activity android:name=".WaterDieticianActivity" />
